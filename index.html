@@ -75,35 +75,41 @@
         </form>
         <div id="response-message"></div>
     </div>
-
     <script>
-        document.getElementById('registration-form').addEventListener('submit', function(event) {
-            event.preventDefault();
 
-            // Collect form data
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            
-            // Define the Google Apps Script URL (replace this with your actual URL)
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbz-ojQmoLFNhl1f9tvZEH-jW19DHAHv5X_2_9kNE8gtOS62_SKx3JEhnkyYsDjZrqXf/exec';
+document.getElementById('registration-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-            // Create a request to send data
-            fetch(scriptUrl, {
-                method: 'POST',
-                body: new URLSearchParams({
-                    'name': name,
-                    'email': email
-                })
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('response-message').innerHTML = '<p class="success-message">Registration successful!</p>';
-            })
-            .catch(error => {
-                document.getElementById('response-message').innerHTML = '<p class="error-message">Something went wrong. Please try again.</p>';
-            });
-        });
-    </script>
+    // Collect form data
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    
+    // Define the Google Apps Script URL (replace this with your actual URL)
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbz-ojQmoLFNhl1f9tvZEH-jW19DHAHv5X_2_9kNE8gtOS62_SKx3JEhnkyYsDjZrqXf/exec';
+
+    // Create a request to send data
+    fetch(scriptUrl, {
+        method: 'POST',
+        body: new URLSearchParams({
+            'name': name,
+            'email': email
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        document.getElementById('response-message').innerHTML = '<p class="success-message">Registration successful!</p>';
+    })
+    .catch(error => {
+        console.error('Error during form submission:', error);
+        document.getElementById('response-message').innerHTML = '<p class="error-message">Something went wrong. Please try again.</p>';
+    });
+});
+</script>
 </body>
 </html>
