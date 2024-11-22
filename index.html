@@ -75,8 +75,7 @@
         </form>
         <div id="response-message"></div>
     </div>
-    <script>
-
+<script>
 document.getElementById('registration-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -88,20 +87,21 @@ document.getElementById('registration-form').addEventListener('submit', function
     // Define the Google Apps Script URL (replace this with your actual URL)
     const scriptUrl = 'https://script.google.com/macros/s/AKfycbz-ojQmoLFNhl1f9tvZEH-jW19DHAHv5X_2_9kNE8gtOS62_SKx3JEhnkyYsDjZrqXf/exec';
 
-    // Create a request to send data
+    // Prepare the data as JSON
+    const data = {
+        name: name,
+        email: email
+    };
+
+    // Send the data as JSON in the POST request
     fetch(scriptUrl, {
         method: 'POST',
-        body: new URLSearchParams({
-            'name': name,
-            'email': email
-        })
+        headers: {
+            'Content-Type': 'application/json'  // Important: Set content type to JSON
+        },
+        body: JSON.stringify(data)  // Send the data as a JSON string
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.text();
-    })
+    .then(response => response.text())
     .then(data => {
         document.getElementById('response-message').innerHTML = '<p class="success-message">Registration successful!</p>';
     })
@@ -110,6 +110,7 @@ document.getElementById('registration-form').addEventListener('submit', function
         document.getElementById('response-message').innerHTML = '<p class="error-message">Something went wrong. Please try again.</p>';
     });
 });
+
 </script>
 </body>
 </html>
