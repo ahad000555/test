@@ -109,22 +109,22 @@
   </div>
   <script>
     function submitData() {
-    const formData = new FormData(document.getElementById('dataForm'));
-    const data = {};
-    formData.forEach((value, key) => data[key] = value);
+  const formData = new FormData(document.getElementById('dataForm'));
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
 
-    fetch('https://script.google.com/macros/s/AKfycbykvtTEKcFTQ1ExO_5Ql8qEJ0b89HVwGp6KQLxjRN_7FPayDoa_bpnI_1i7UjxC5KNN/exec', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.text())
-    .then(message => {
-        alert(message.includes("Success") ? "Data submitted successfully!" : "Data submission failed.");
-    })
-    .catch(err => alert('Submission failed. Network error.'));
+  fetch('https://script.google.com/macros/s/AKfycbykvtTEKcFTQ1ExO_5Ql8qEJ0b89HVwGp6KQLxjRN_7FPayDoa_bpnI_1i7UjxC5KNN/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.text())
+  .then(message => {
+    alert(message.includes("Success") ? "Data submitted successfully!" : "Data submission failed.");
+  })
+  .catch(err => alert('Submission failed. Network error.'));
 }
 
   </script>
