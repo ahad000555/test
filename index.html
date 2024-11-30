@@ -1,197 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   </head>
   <body>
-    <section class="hero is-primary is-bold">
+    <section class="hero is-link is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Data Entry Form.</h1>
+          <h1 class="title">Data Display</h1>
         </div>
       </div>
     </section>
-    <form id="form" class="container m-4 pl-4" method="POST">
-      <div class="field">
-        <label class="label">Client Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Client Name"
-            name="Client Name"
-          />
-        </div>
-      </div>
 
-      <!-- <div class="field">
-        <label class="label">Last Name</label>
-        <div class="control">
-          <input
-            class="input"
-            type="text"
-            placeholder="Your Last Name"
-            name="Last Name"
-          />
-        </div>
-      </div> -->
+    <section class="container m-4">
+      <h2 class="title is-4">Submitted Data</h2>
+      <table class="table is-striped is-hoverable is-fullwidth" id="data-table">
+        <thead>
+          <tr id="table-headers"></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </section>
 
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input
-            class="input"
-            type="email"
-            placeholder="Your Email"
-            name="Email"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Password</label>
-        <div class="control">
-          <input
-            class="input"
-            type="password"
-            placeholder="Your Password"
-            name="Password"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Date of Birth</label>
-        <div class="control">
-          <input
-            class="input"
-            type="date"
-            placeholder="Your Date of Birth"
-            name="DOB"
-          />
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Gender</label>
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="Gender" value="male" /> Male
-          </label>
-          <label class="radio">
-            <input type="radio" name="Gender" value="female" /> Female
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Agree to Terms</label>
-        <div class="control">
-          <label class="checkbox">
-            <input type="checkbox" name="Agree To Terms" value="yes" /> I agree
-            to the terms and conditions
-          </label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Additional Information</label>
-        <div class="control">
-          <textarea
-            class="textarea"
-            placeholder="Any additional information"
-            name="Notes"
-          ></textarea>
-        </div>
-      </div>
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary" type="submit" id="submit-button">
-            Sign Up
-          </button>
-        </div>
-        <div class="control">
-          <button class="button is-danger">Cancel</button>
-        </div>
-      </div>
-    </form>
-    <div
-      id="message"
-      style="
-        display: none;
-        margin: 20px;
-        font-weight: bold;
-        color: green;
-        padding: 8px;
-        background-color: beige;
-        border-radius: 4px;
-        border-color: aquamarine;
-      "
-    ></div>
+    <div id="message" style="margin: 20px; font-weight: bold;"></div>
 
     <script>
-      document.getElementById("form").addEventListener("submit", function (e) {
-        e.preventDefault(); // Prevent the default form submission
-        document.getElementById("message").textContent = "Submitting..";
-        document.getElementById("message").style.display = "block";
-        document.getElementById("submit-button").disabled = true;
+      const dataTable = document.getElementById("data-table");
+      const tableHeaders = document.getElementById("table-headers");
+      const tableBody = document.getElementById("table-body");
+      const message = document.getElementById("message");
 
-        // Collect the form data
-        var formData = new FormData(this);
-        var keyValuePairs = [];
-        for (var pair of formData.entries()) {
-          keyValuePairs.push(pair[0] + "=" + pair[1]);
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzKjehavT6TXMBhvjQUHeC5Ys04cH1wnuf96dsPk0vqSLbMumlHU2IX0JqgRXngyFdW/exec"; // Replace with your Apps Script URL
+
+      // Load data from the Google Sheet
+      function loadData() {
+        fetch(WEB_APP_URL)
+          .then(response => response.json())
+          .then(data => {
+            renderTable(data);
+          })
+          .catch(error => {
+            console.error("Error fetching data:", error);
+            message.textContent = "Error loading data.";
+          });
+      }
+
+      // Render the data in a table
+      function renderTable(data) {
+        // Clear previous table contents
+        tableHeaders.innerHTML = "";
+        tableBody.innerHTML = "";
+
+        if (data.length === 0) {
+          tableBody.innerHTML = "<tr><td colspan='100%'>No data available</td></tr>";
+          return;
         }
 
-        var formDataString = keyValuePairs.join("&");
+        // Populate headers
+        const headers = Object.keys(data[0]);
+        headers.forEach(header => {
+          const th = document.createElement("th");
+          th.textContent = header;
+          tableHeaders.appendChild(th);
+        });
 
-        // Send a POST request to your Google Apps Script
-        fetch(
-          "https://script.google.com/macros/s/AKfycby81iDLIk_9yHSDdUyFywbhfoB-ZOM1MmsR79Mh_eZ1_5d2U1lVNFTfIFmBLNodlItN/exec",
-          {
-            redirect: "follow",
-            method: "POST",
-            body: formDataString,
-            headers: {
-              "Content-Type": "text/plain;charset=utf-8",
-            },
-          }
-        )
-          .then(function (response) {
-            // Check if the request was successful
-            if (response) {
-              return response; // Assuming your script returns JSON response
-            } else {
-              throw new Error("Failed to submit the form.");
-            }
-          })
-          .then(function (data) {
-            // Display a success message
-            document.getElementById("message").textContent =
-              "Data submitted successfully!";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("message").style.backgroundColor = "green";
-            document.getElementById("message").style.color = "beige";
-            document.getElementById("submit-button").disabled = false;
-            document.getElementById("form").reset();
-
-            setTimeout(function () {
-              document.getElementById("message").textContent = "";
-              document.getElementById("message").style.display = "none";
-            }, 2600);
-          })
-          .catch(function (error) {
-            // Handle errors, you can display an error message here
-            console.error(error);
-            document.getElementById("message").textContent =
-              "An error occurred while submitting the form.";
-            document.getElementById("message").style.display = "block";
+        // Populate rows
+        data.forEach(row => {
+          const tr = document.createElement("tr");
+          headers.forEach(header => {
+            const td = document.createElement("td");
+            td.textContent = row[header];
+            tr.appendChild(td);
           });
-      });
+          tableBody.appendChild(tr);
+        });
+      }
+
+      // Load data on page load
+      window.onload = loadData;
     </script>
   </body>
 </html>
