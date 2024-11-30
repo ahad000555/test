@@ -7,54 +7,51 @@
     <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Meal Entry Form</h1>
+          <h1 class="title">Meal Entry System</h1>
         </div>
       </div>
     </section>
 
-    <form id="form" class="container m-4">
+    <form id="form" class="container m-4 pl-4">
       <div class="field">
-        <label class="label">Day</label>
+        <label class="label">Select Day (1 to 31)</label>
         <div class="control">
-          <div class="select">
-            <select name="Day" required>
-              <option value="" disabled selected>Select a day</option>
-              <!-- Days 1 to 31 -->
-              ${Array.from({ length: 31 }, (_, i) => `<option>${i + 1}</option>`).join('')}
-            </select>
-          </div>
+          <input class="input" type="number" name="Day" min="1" max="31" required />
         </div>
       </div>
 
-      <!-- Input fields for meal data -->
       <div class="field">
         <label class="label">Ahad</label>
         <div class="control">
-          <input class="input" type="number" name="Ahad" placeholder="Meals by Ahad" />
+          <input class="input" type="number" name="Ahad" placeholder="Meals" />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Abdullah</label>
         <div class="control">
-          <input class="input" type="number" name="Abdullah" placeholder="Meals by Abdullah" />
+          <input class="input" type="number" name="Abdullah" placeholder="Meals" />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Maher</label>
         <div class="control">
-          <input class="input" type="number" name="Maher" placeholder="Meals by Maher" />
+          <input class="input" type="number" name="Maher" placeholder="Meals" />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Hasan</label>
         <div class="control">
-          <input class="input" type="number" name="Hasan" placeholder="Meals by Hasan" />
+          <input class="input" type="number" name="Hasan" placeholder="Meals" />
         </div>
       </div>
+
       <div class="field">
         <label class="label">Bazar</label>
         <div class="control">
-          <input class="input" type="number" name="Bazar" placeholder="Bazar Amount" />
+          <input class="input" type="number" name="Bazar" placeholder="Expenses" />
         </div>
       </div>
 
