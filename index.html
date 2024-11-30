@@ -1,100 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Calculation System</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
   </head>
   <body>
     <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Meal Entry System</h1>
+          <h1 class="title">Meal Calculation System</h1>
         </div>
       </div>
     </section>
 
-    <form id="form" class="container m-4 pl-4">
-      <div class="field">
-        <label class="label">Select Day (1 to 31)</label>
-        <div class="control">
-          <input class="input" type="number" name="Day" min="1" max="31" required />
+    <div class="container m-4">
+      <h2 class="subtitle">Input Data</h2>
+      <form id="input-form">
+        <div class="field">
+          <label class="label">Select Day</label>
+          <div class="control">
+            <div class="select">
+              <select id="day-select" name="day">
+                <option value="">Select a day</option>
+                <!-- Days from 1 to 31 -->
+                <script>
+                  for (let i = 1; i <= 31; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                  }
+                </script>
+              </select>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Ahad</label>
-        <div class="control">
-          <input class="input" type="number" name="Ahad" placeholder="Meals" />
+        <div class="field">
+          <label class="label">AHAD</label>
+          <div class="control">
+            <input class="input" type="text" id="ahad" name="ahad" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Abdullah</label>
-        <div class="control">
-          <input class="input" type="number" name="Abdullah" placeholder="Meals" />
+        <div class="field">
+          <label class="label">ABDULLAH</label>
+          <div class="control">
+            <input class="input" type="text" id="abdullah" name="abdullah" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Maher</label>
-        <div class="control">
-          <input class="input" type="number" name="Maher" placeholder="Meals" />
+        <div class="field">
+          <label class="label">MAHER</label>
+          <div class="control">
+            <input class="input" type="text" id="maher" name="maher" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Hasan</label>
-        <div class="control">
-          <input class="input" type="number" name="Hasan" placeholder="Meals" />
+        <div class="field">
+          <label class="label">HASAN</label>
+          <div class="control">
+            <input class="input" type="text" id="hasan" name="hasan" />
+          </div>
         </div>
-      </div>
 
-      <div class="field">
-        <label class="label">Bazar</label>
-        <div class="control">
-          <input class="input" type="number" name="Bazar" placeholder="Expenses" />
+        <div class="field">
+          <label class="label">BAZAR</label>
+          <div class="control">
+            <input class="input" type="text" id="bazar" name="bazar" />
+          </div>
         </div>
-      </div>
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary" type="submit">Submit</button>
+        <div class="field">
+          <button class="button is-primary" type="submit" id="submit-button">Submit</button>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
 
-    <div id="message" style="margin: 20px; font-weight: bold;"></div>
+    <section class="container m-4">
+      <h2 class="subtitle">Meal Data Table</h2>
+      <table class="table is-bordered">
+        <thead>
+          <tr>
+            <th>DAY</th>
+            <th>AHAD</th>
+            <th>ABDULLAH</th>
+            <th>MAHER</th>
+            <th>HASAN</th>
+            <th>BAZAR</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Dynamic data rows will be inserted here -->
+        </tbody>
+      </table>
+    </section>
 
     <script>
-      const form = document.getElementById("form");
-      const message = document.getElementById("message");
-
-      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec"; // Replace with your Apps Script URL
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const formParams = new URLSearchParams(formData).toString();
-
-        message.textContent = "Submitting...";
-
-        fetch(WEB_APP_URL, {
-          method: "POST",
-          body: formParams,
-          headers: { "Content-Type": "application/x-www-form-urlencoded" }
-        })
-          .then(response => {
-            if (!response.ok) throw new Error("Failed to submit data.");
-            return response.text();
+      // Function to fetch and display the existing data from Google Sheets
+      function fetchData() {
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec"
+        )
+          .then(response => response.json())
+          .then(data => {
+            const tableBody = document.getElementById("data-table-body");
+            tableBody.innerHTML = "";
+            data.forEach(row => {
+              const tr = document.createElement("tr");
+              tr.innerHTML = `
+                <td>${row["DAY"]}</td>
+                <td>${row["AHAD"]}</td>
+                <td>${row["ABDULLAH"]}</td>
+                <td>${row["MAHER"]}</td>
+                <td>${row["HASAN"]}</td>
+                <td>${row["BAZAR"]}</td>
+              `;
+              tableBody.appendChild(tr);
+            });
           })
-          .then(() => {
-            message.textContent = "Data submitted successfully!";
-            form.reset();
+          .catch(error => console.error(error));
+      }
+
+      // Function to populate the input form with existing data for a selected day
+      function populateForm(day) {
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec"
+        )
+          .then(response => response.json())
+          .then(data => {
+            const existingData = data.find(item => item["DAY"] == day);
+            if (existingData) {
+              document.getElementById("ahad").value = existingData["AHAD"];
+              document.getElementById("abdullah").value = existingData["ABDULLAH"];
+              document.getElementById("maher").value = existingData["MAHER"];
+              document.getElementById("hasan").value = existingData["HASAN"];
+              document.getElementById("bazar").value = existingData["BAZAR"];
+            }
           })
-          .catch(error => {
-            console.error("Error:", error);
-            message.textContent = "Error submitting data.";
-          });
+          .catch(error => console.error(error));
+      }
+
+      // Event listener to handle day selection and populate the form
+      document.getElementById("day-select").addEventListener("change", function () {
+        const selectedDay = this.value;
+        if (selectedDay) {
+          populateForm(selectedDay); // Populate the form for the selected day
+        }
       });
+
+      // Event listener to handle form submission
+      document.getElementById("input-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const day = document.getElementById("day-select").value;
+        const ahad = document.getElementById("ahad").value;
+        const abdullah = document.getElementById("abdullah").value;
+        const maher = document.getElementById("maher").value;
+        const hasan = document.getElementById("hasan").value;
+        const bazar = document.getElementById("bazar").value;
+
+        if (day) {
+          const data = {
+            day,
+            ahad,
+            abdullah,
+            maher,
+            hasan,
+            bazar
+          };
+
+          // Send updated data to Google Sheets via Apps Script
+          fetch(
+            "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec",
+            {
+              method: "POST",
+              body: JSON.stringify(data)
+            }
+          )
+            .then(response => response.json())
+            .then(() => {
+              fetchData(); // Refresh the data table after submission
+              alert("Data submitted successfully!");
+            })
+            .catch(error => console.error(error));
+        }
+      });
+
+      // Initial fetch of data to populate the table
+      fetchData();
     </script>
   </body>
 </html>
