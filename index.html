@@ -4,80 +4,97 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   </head>
   <body>
-    <section class="hero is-link is-bold">
+    <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Data Display</h1>
+          <h1 class="title">Meal Entry System</h1>
         </div>
       </div>
     </section>
 
-    <section class="container m-4">
-      <h2 class="title is-4">Submitted Data</h2>
-      <table class="table is-striped is-hoverable is-fullwidth" id="data-table">
-        <thead>
-          <tr id="table-headers"></tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
-    </section>
+    <form id="form" class="container m-4 pl-4">
+      <div class="field">
+        <label class="label">Select Day (1 to 31)</label>
+        <div class="control">
+          <input class="input" type="number" name="Day" min="1" max="31" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Ahad</label>
+        <div class="control">
+          <input class="input" type="number" name="Ahad" placeholder="Meals" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Abdullah</label>
+        <div class="control">
+          <input class="input" type="number" name="Abdullah" placeholder="Meals" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Maher</label>
+        <div class="control">
+          <input class="input" type="number" name="Maher" placeholder="Meals" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Hasan</label>
+        <div class="control">
+          <input class="input" type="number" name="Hasan" placeholder="Meals" required />
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Bazar</label>
+        <div class="control">
+          <input class="input" type="number" name="Bazar" placeholder="Expenses" required />
+        </div>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
 
     <div id="message" style="margin: 20px; font-weight: bold;"></div>
 
     <script>
-      const dataTable = document.getElementById("data-table");
-      const tableHeaders = document.getElementById("table-headers");
-      const tableBody = document.getElementById("table-body");
+      const form = document.getElementById("form");
       const message = document.getElementById("message");
 
-      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzKjehavT6TXMBhvjQUHeC5Ys04cH1wnuf96dsPk0vqSLbMumlHU2IX0JqgRXngyFdW/exec"; // Replace with your Apps Script URL
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec"; // Replace with your Apps Script URL
 
-      // Load data from the Google Sheet
-      function loadData() {
-        fetch(WEB_APP_URL)
-          .then(response => response.json())
-          .then(data => {
-            renderTable(data);
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const formParams = new URLSearchParams(formData).toString();
+
+        message.textContent = "Submitting...";
+
+        fetch(WEB_APP_URL, {
+          method: "POST",
+          body: formParams,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        })
+          .then(response => {
+            if (!response.ok) throw new Error("Failed to submit data.");
+            return response.text();
+          })
+          .then(() => {
+            message.textContent = "Data submitted successfully!";
+            form.reset();
           })
           .catch(error => {
-            console.error("Error fetching data:", error);
-            message.textContent = "Error loading data.";
+            console.error("Error:", error);
+            message.textContent = "Error submitting data.";
           });
-      }
-
-      // Render the data in a table
-      function renderTable(data) {
-        // Clear previous table contents
-        tableHeaders.innerHTML = "";
-        tableBody.innerHTML = "";
-
-        if (data.length === 0) {
-          tableBody.innerHTML = "<tr><td colspan='100%'>No data available</td></tr>";
-          return;
-        }
-
-        // Populate headers
-        const headers = Object.keys(data[0]);
-        headers.forEach(header => {
-          const th = document.createElement("th");
-          th.textContent = header;
-          tableHeaders.appendChild(th);
-        });
-
-        // Populate rows
-        data.forEach(row => {
-          const tr = document.createElement("tr");
-          headers.forEach(header => {
-            const td = document.createElement("td");
-            td.textContent = row[header];
-            tr.appendChild(td);
-          });
-          tableBody.appendChild(tr);
-        });
-      }
-
-      // Load data on page load
-      window.onload = loadData;
+      });
     </script>
   </body>
 </html>
