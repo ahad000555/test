@@ -1,158 +1,98 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
   </head>
   <body>
     <section class="hero is-primary is-bold">
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">Meal Calculation System</h1>
+          <h1 class="title">Meal Entry System</h1>
         </div>
       </div>
     </section>
 
-    <!-- Input Form -->
-    <form id="form" class="container m-4 pl-4" method="POST">
+    <form id="form" class="container m-4 pl-4">
       <div class="field">
-        <label class="label">Day</label>
+        <label class="label">Select Day (1 to 31)</label>
         <div class="control">
-          <select id="day-select" class="input" name="Day">
-            <option value="" disabled selected>Select a day</option>
-            <!-- Dynamically populate days 1-31 -->
-            <script>
-              for (let i = 1; i <= 31; i++) {
-                document.write('<option value="' + i + '">' + i + '</option>');
-              }
-            </script>
-          </select>
+          <input class="input" type="number" name="Day" min="1" max="31" required />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">AHAD</label>
+        <label class="label">Ahad</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Enter AHAD" name="AHAD" />
+          <input class="input" type="number" name="Ahad" placeholder="Meals" />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">ABDULLAH</label>
+        <label class="label">Abdullah</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Enter ABDULLAH" name="ABDULLAH" />
+          <input class="input" type="number" name="Abdullah" placeholder="Meals" />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">MAHER</label>
+        <label class="label">Maher</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Enter MAHER" name="MAHER" />
+          <input class="input" type="number" name="Maher" placeholder="Meals" />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">HASAN</label>
+        <label class="label">Hasan</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Enter HASAN" name="HASAN" />
+          <input class="input" type="number" name="Hasan" placeholder="Meals" />
         </div>
       </div>
 
       <div class="field">
-        <label class="label">BAZAR</label>
+        <label class="label">Bazar</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Enter BAZAR" name="BAZAR" />
+          <input class="input" type="number" name="Bazar" placeholder="Expenses" />
         </div>
       </div>
 
       <div class="field is-grouped">
         <div class="control">
-          <button class="button is-primary" type="submit" id="submit-button">
-            Submit
-          </button>
-        </div>
-        <div class="control">
-          <button class="button is-danger" type="reset">
-            Cancel
-          </button>
+          <button class="button is-primary" type="submit">Submit</button>
         </div>
       </div>
     </form>
 
-    <!-- Display Table -->
-    <div class="container m-4">
-      <table class="table is-bordered is-striped is-narrow is-hoverable">
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>AHAD</th>
-            <th>ABDULLAH</th>
-            <th>MAHER</th>
-            <th>HASAN</th>
-            <th>BAZAR</th>
-          </tr>
-        </thead>
-        <tbody id="meal-table">
-          <!-- Meal data will be inserted here -->
-        </tbody>
-      </table>
-    </div>
+    <div id="message" style="margin: 20px; font-weight: bold;"></div>
 
     <script>
-      // Fetch and display data on page load
-      window.onload = function () {
-        fetchMealData();
-      };
+      const form = document.getElementById("form");
+      const message = document.getElementById("message");
 
-      function fetchMealData() {
-        fetch('https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec') // Replace with your script URL
-          .then((response) => response.json())
-          .then((data) => {
-            const tableBody = document.getElementById('meal-table');
-            tableBody.innerHTML = '';
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec"; // Replace with your Apps Script URL
 
-            data.forEach((row) => {
-              const tr = document.createElement('tr');
-              tr.innerHTML = `
-                <td>${row.Day}</td>
-                <td>${row.AHAD}</td>
-                <td>${row.ABDULLAH}</td>
-                <td>${row.MAHER}</td>
-                <td>${row.HASAN}</td>
-                <td>${row.BAZAR}</td>
-              `;
-              tableBody.appendChild(tr);
-            });
-          })
-          .catch((error) => {
-            console.error('Error fetching data:', error);
-          });
-      }
-
-      // Handle form submission
-      document.getElementById('form').addEventListener('submit', function (e) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
+        const formData = new FormData(form);
+        const formParams = new URLSearchParams(formData).toString();
 
-        const formData = new FormData(this);
-        const data = {};
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
+        message.textContent = "Submitting...";
 
-        fetch('https://script.google.com/macros/s/AKfycbwKvPfVHmjPnQrLk1IgWDVNJ77UMUxt98aZNhD1O4VAqu3e8GlYXdXVUKzFGCHbvajD/exec', {
-          method: 'POST',
-          body: new URLSearchParams(data),
+        fetch(WEB_APP_URL, {
+          method: "POST",
+          body: formParams,
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
         })
-          .then((response) => response.json())
-          .then(() => {
-            alert('Data submitted successfully!');
-            fetchMealData(); // Refresh the table with updated data
+          .then(response => {
+            if (!response.ok) throw new Error("Failed to submit data.");
+            return response.text();
           })
-          .catch((error) => {
-            console.error('Error submitting data:', error);
-            alert('Failed to submit data!');
+          .then(() => {
+            message.textContent = "Data submitted successfully!";
+            form.reset();
+          })
+          .catch(error => {
+            console.error("Error:", error);
+            message.textContent = "Error submitting data.";
           });
       });
     </script>
