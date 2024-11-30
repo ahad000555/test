@@ -13,18 +13,17 @@
     </section>
 
     <form id="form" class="container m-4">
-      <div class="field">
-        <label class="label">Day</label>
-        <div class="control">
-          <div class="select">
-            <select name="Day" required>
-              <option value="" disabled selected>Select a day</option>
-              <!-- Days 1 to 31 -->
-              ${Array.from({ length: 31 }, (_, i) => `<option>${i + 1}</option>`).join('')}
-            </select>
-          </div>
-        </div>
+  <div class="field">
+    <label class="label">Day</label>
+    <div class="control">
+      <div class="select">
+        <select name="Day" required>
+          <option value="" disabled selected>Select a day</option>
+          ${Array.from({ length: 31 }, (_, i) => `<option>${i + 1}</option>`).join('')}
+        </select>
       </div>
+    </div>
+  </div>
 
       <!-- Input fields for meal data -->
       <div class="field">
