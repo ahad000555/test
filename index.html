@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Social Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* General Reset */
         * {
@@ -17,86 +18,59 @@
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
+            flex-direction: column;
             height: 100vh;
-            padding: 2rem 1rem;
+            overflow: hidden;
+            padding: 1rem;
             text-align: center;
         }
 
-        .profile-picture {
-            width: 140px;
-            height: 140px;
+        img {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 5px solid #e94560;
+            border: px solid #e94560;
+            margin-bottom: 1rem;
+            object-fit: cover;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-top: 1rem;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #b1b1b1;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
             max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .important-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .important-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-            width: 250px;
-        }
-
-        .important-button-resume {
-            background: #e94560;
-        }
-
-        .important-button-resume:hover {
-            background: #c2334e;
-        }
-
-        .important-button-website {
-            background: #1da1f2;
-        }
-
-        .important-button-website:hover {
-            background: #0a84d7;
+            margin: 0 auto 1.5rem auto;
         }
 
         .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
-            width: 100%;
-            max-width: 600px;
+            margin-top: 1rem;
         }
 
         .button {
-            display: inline-block;
+            display: block;
+            width: 140px;
             text-align: center;
-            padding: 0.8rem 0;
+            padding: 0.7rem;
             font-size: 1rem;
             border-radius: 8px;
             color: #fff;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-weight: 500;
         }
 
         .button-facebook {
@@ -131,91 +105,123 @@
             background: #005983;
         }
 
-        .button-youtube {
-            background: #ff0000;
+        .button-whatsapp {
+            background: #25d366;
         }
 
-        .button-youtube:hover {
-            background: #cc0000;
+        .button-whatsapp:hover {
+            background: #128c7e;
         }
 
-        .button-github {
-            background: #333;
+        .button-contact {
+            background: #4caf50;
         }
 
-        .button-github:hover {
-            background: #242424;
+        .button-contact:hover {
+            background: #388e3c;
         }
 
-        .button-tiktok {
-            background: #010101;
+        .social-links i {
+            margin-right: 8px;
         }
 
-        .button-tiktok:hover {
-            background: #080808;
+        /* Footer Design */
+        footer {
+            margin-top: 2.5rem;
+            padding: 1.5rem 1rem;
+            background-color: #0f3460;
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            font-size: 0.9rem;
+            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            h1 {
-                font-size: 2rem;
-            }
+        footer p {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #b1b1b1;
+        }
 
-            p {
-                font-size: 1rem;
-            }
+        footer .footer-links {
+            margin-top: 1rem;
+        }
 
-            .important-button {
-                padding: 0.8rem 1.6rem;
-                font-size: 1rem;
-            }
+        footer .footer-links a {
+            color: #e94560;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            color: #fff;
+        }
+
+        footer .footer-links a:active {
+            color: #ff5c8e;
         }
 
         @media (max-width: 600px) {
-            .profile-picture {
-                width: 100px;
-                height: 100px;
-            }
-
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             p {
                 font-size: 0.9rem;
+                line-height: 1.5;
+                padding: 0 1rem;
             }
 
-            .important-button {
-                width: 100%;
+            .button {
                 font-size: 0.9rem;
-                padding: 0.6rem 1rem;
+                width: 120px;
+                padding: 0.6rem;
             }
 
-            .social-links {
-                gap: 0.8rem;
-                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            footer p {
+                font-size: 0.8rem;
+            }
+
+            footer .footer-links a {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+    <img src="profile.jpg" alt="Profile Picture">
     <h1>ABDUL AHAD</h1>
-    <p>Currently, I am pursuing a BSc in Computer Science and Engineering. Alongside my studies, I am also working as an instructor.</p>
-
-    <div class="important-links">
-        <a href="resume.pdf" target="_blank" class="important-button important-button-resume">My Resume</a>
-        <a href="https://mywebsite.com" target="_blank" class="important-button important-button-website">My Website</a>
-    </div>
+    <p>I am a passionate learner and an aspiring software engineer. Currently pursuing a BSc in Computer Science and Engineering, I also teach programming and technology-related subjects to help others grow their skills. I love exploring new technologies and sharing my knowledge with the community.</p>
 
     <div class="social-links">
-        <a href="https://facebook.com" target="_blank" class="button button-facebook">Facebook</a>
-        <a href="https://instagram.com" target="_blank" class="button button-instagram">Instagram</a>
-        <a href="https://twitter.com" target="_blank" class="button button-twitter">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" class="button button-linkedin">LinkedIn</a>
-        <a href="https://youtube.com" target="_blank" class="button button-youtube">YouTube</a>
-        <a href="https://github.com" target="_blank" class="button button-github">GitHub</a>
-        <a href="https://tiktok.com" target="_blank" class="button button-tiktok">TikTok</a>
+        <a href="https://facebook.com" target="_blank" class="button button-facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" class="button button-instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://twitter.com" target="_blank" class="button button-twitter">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="button button-linkedin">
+            <i class="fab fa-linkedin-in"></i> LinkedIn
+        </a>
+        <a href="https://wa.me/+1234567890" target="_blank" class="button button-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="mailto:youremail@example.com" target="_blank" class="button button-contact">
+            <i class="fas fa-envelope"></i> Contact
+        </a>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
