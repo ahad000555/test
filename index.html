@@ -1,100 +1,159 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-  </head>
-  <body>
-    <section class="hero is-primary is-bold">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">Meal Entry System</h1>
-        </div>
-      </div>
-    </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Social Links</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-    <form id="form" class="container m-4 pl-4">
-      <div class="field">
-        <label class="label">Select Day (1 to 31)</label>
-        <div class="control">
-          <input class="input" type="number" name="Day" min="1" max="31" required />
-        </div>
-      </div>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 1rem;
+        }
 
-      <div class="field">
-        <label class="label">Ahad</label>
-        <div class="control">
-          <input class="input" type="number" name="Ahad" placeholder="Meals" />
-        </div>
-      </div>
+        .container {
+            text-align: center;
+            background: #0f3460;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+        }
 
-      <div class="field">
-        <label class="label">Abdullah</label>
-        <div class="control">
-          <input class="input" type="number" name="Abdullah" placeholder="Meals" />
-        </div>
-      </div>
+        .profile-picture {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #e94560;
+            margin: 0 auto 1rem;
+        }
 
-      <div class="field">
-        <label class="label">Maher</label>
-        <div class="control">
-          <input class="input" type="number" name="Maher" placeholder="Meals" />
-        </div>
-      </div>
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
 
-      <div class="field">
-        <label class="label">Hasan</label>
-        <div class="control">
-          <input class="input" type="number" name="Hasan" placeholder="Meals" />
-        </div>
-      </div>
+        p {
+            font-size: 1rem;
+            color: #b1b1b1;
+            margin-bottom: 2rem;
+        }
 
-      <div class="field">
-        <label class="label">Bazar</label>
-        <div class="control">
-          <input class="input" type="number" name="Bazar" placeholder="Expenses" />
-        </div>
-      </div>
+        .button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.8rem 0;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
 
-      <div class="field is-grouped">
-        <div class="control">
-          <button class="button is-primary" type="submit">Submit</button>
-        </div>
-      </div>
-    </form>
+        .button-facebook {
+            background: #3b5998;
+        }
 
-    <div id="message" style="margin: 20px; font-weight: bold;"></div>
+        .button-facebook:hover {
+            background: #2d4373;
+        }
 
-    <script>
-      const form = document.getElementById("form");
-      const message = document.getElementById("message");
+        .button-instagram {
+            background: #e4405f;
+        }
 
-      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxLRVfXJJYODnYBIzyE_TG1kCpK7dMJufXcRjfPt9_ylHOw-eJYM5jzcXgZJL4tfK_K/exec"; // Replace with your Apps Script URL
+        .button-instagram:hover {
+            background: #c2334e;
+        }
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        const formData = new FormData(form);
-        const formParams = new URLSearchParams(formData).toString();
+        .button-twitter {
+            background: #1da1f2;
+        }
 
-        message.textContent = "Submitting...";
+        .button-twitter:hover {
+            background: #0a84d7;
+        }
 
-        fetch(WEB_APP_URL, {
-          method: "POST",
-          body: formParams,
-          headers: { "Content-Type": "application/x-www-form-urlencoded" }
-        })
-          .then(response => {
-            if (!response.ok) throw new Error("Failed to submit data.");
-            return response.text();
-          })
-          .then(() => {
-            message.textContent = "Data submitted successfully!";
-            form.reset();
-          })
-          .catch(error => {
-            console.error("Error:", error);
-            message.textContent = "Error submitting data.";
-          });
-      });
-    </script>
-  </body>
+        .button-linkedin {
+            background: #0077b5;
+        }
+
+        .button-linkedin:hover {
+            background: #005983;
+        }
+
+        .button-youtube {
+            background: #ff0000;
+        }
+
+        .button-youtube:hover {
+            background: #cc0000;
+        }
+
+        .button-github {
+            background: #333;
+        }
+
+        .button-github:hover {
+            background: #242424;
+        }
+
+        .button-tiktok {
+            background: #010101;
+        }
+
+        .button-tiktok:hover {
+            background: #080808;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+        <h1>ABDUL AHAD</h1>
+        <p>Currently, I am pursuing a BSc in Computer Science and Engineering. Alongside my studies, I am also working as an instructor.</p>
+
+        <a href="https://facebook.com" target="_blank" class="button button-facebook">Facebook</a>
+        <a href="https://instagram.com" target="_blank" class="button button-instagram">Instagram</a>
+        <a href="https://twitter.com" target="_blank" class="button button-twitter">Twitter</a>
+        <a href="https://linkedin.com" target="_blank" class="button button-linkedin">LinkedIn</a>
+        <a href="https://youtube.com" target="_blank" class="button button-youtube">YouTube</a>
+        <a href="https://github.com" target="_blank" class="button button-github">GitHub</a>
+        <a href="https://tiktok.com" target="_blank" class="button button-tiktok">TikTok</a>
+    </div>
+</body>
 </html>
