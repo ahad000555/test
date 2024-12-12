@@ -10,95 +10,71 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             padding: 1rem;
         }
 
-        .container {
-            text-align: center;
-            background: #24243e;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-            max-width: 450px;
-            width: 100%;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         .profile-picture {
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
-            border: 5px solid #e94560;
-            margin: 0 auto 1rem;
-            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.5);
+            border: 4px solid #e94560;
+            margin-bottom: 1rem;
         }
 
         h1 {
             font-size: 2rem;
-            margin-bottom: 0.7rem;
-            color: #e94560;
+            margin-bottom: 0.5rem;
         }
 
         p {
-            font-size: 1.1rem;
-            color: #c1c1c1;
+            font-size: 1.2rem;
+            color: #b1b1b1;
+            text-align: center;
             margin-bottom: 2rem;
-            line-height: 1.6;
         }
 
         .button {
             display: block;
-            width: 100%;
+            width: 220px;
             text-align: center;
-            padding: 0.9rem 0;
+            padding: 0.8rem 0;
             margin: 0.5rem 0;
             font-size: 1rem;
-            border-radius: 10px;
+            border-radius: 8px;
             color: #fff;
             text-decoration: none;
-            transition: all 0.4s ease;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
         .button-facebook {
-            background: #4267B2;
+            background: #3b5998;
         }
 
         .button-facebook:hover {
-            background: #365899;
+            background: #2d4373;
         }
 
         .button-instagram {
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            background: #e4405f;
         }
 
         .button-instagram:hover {
-            filter: brightness(0.9);
+            background: #c2334e;
         }
 
         .button-twitter {
-            background: #1DA1F2;
+            background: #1da1f2;
         }
 
         .button-twitter:hover {
@@ -114,11 +90,11 @@
         }
 
         .button-youtube {
-            background: #FF0000;
+            background: #ff0000;
         }
 
         .button-youtube:hover {
-            background: #CC0000;
+            background: #cc0000;
         }
 
         .button-github {
@@ -137,29 +113,16 @@
             background: #080808;
         }
 
-        .button {
-            position: relative;
-            overflow: hidden;
-        }
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            body {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
 
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-        }
-
-        .button:hover::before {
-            left: 100%;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 2rem;
+            .profile-picture {
+                width: 130px;
+                height: 130px;
             }
 
             h1 {
@@ -171,24 +134,50 @@
             }
 
             .button {
+                width: 200px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .button {
+                width: 100%;
+                padding: 0.6rem 0;
                 font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <img src="Profile.jpg" alt="Profile Picture" class="profile-picture">
-        <h1>ABDUL AHAD</h1>
-        <p>Currently, I am pursuing a BSc in Computer Science and Engineering. Alongside my studies, I am also working as an instructor.</p>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+    <h1>ABDUL AHAD</h1>
+    <p>Currently, I am pursuing a BSc in Computer Science and Engineering. Alongside my studies, I am also working as an instructor.</p>
 
-        <a href="https://facebook.com" target="_blank" class="button button-facebook">Facebook</a>
-        <a href="https://instagram.com" target="_blank" class="button button-instagram">Instagram</a>
-        <a href="https://twitter.com" target="_blank" class="button button-twitter">Twitter</a>
-        <a href="https://linkedin.com" target="_blank" class="button button-linkedin">LinkedIn</a>
-        <a href="https://youtube.com" target="_blank" class="button button-youtube">YouTube</a>
-        <a href="https://github.com" target="_blank" class="button button-github">GitHub</a>
-        <a href="https://tiktok.com" target="_blank" class="button button-tiktok">TikTok</a>
-    </div>
+    <a href="https://facebook.com" target="_blank" class="button button-facebook">Facebook</a>
+    <a href="https://instagram.com" target="_blank" class="button button-instagram">Instagram</a>
+    <a href="https://twitter.com" target="_blank" class="button button-twitter">Twitter</a>
+    <a href="https://linkedin.com" target="_blank" class="button button-linkedin">LinkedIn</a>
+    <a href="https://youtube.com" target="_blank" class="button button-youtube">YouTube</a>
+    <a href="https://github.com" target="_blank" class="button button-github">GitHub</a>
+    <a href="https://tiktok.com" target="_blank" class="button button-tiktok">TikTok</a>
 </body>
 </html>
