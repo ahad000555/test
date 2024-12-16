@@ -15,20 +15,20 @@
         }
 
         body {
-        background: linear-gradient(135deg, #1a1a2e, #16213e);
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 100vh; /* Adjusted to allow content to flow beyond viewport */
-        padding: 1rem;
-        text-align: center;
-		}
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 1rem;
+            text-align: center;
+        }
 
-		html {
-			overflow-y: auto; /* Ensures scrolling works if content overflows */
-		}
+        html {
+            overflow-y: auto;
+        }
 
         img {
             width: 120px;
@@ -158,16 +158,17 @@
             }
 
             .social-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%; /* Ensure container is full width */
+    }
 
-            .button {
-                font-size: 1rem;
-                width: 100%;
-                max-width: 250px;
-                padding: 0.7rem;
-            }
+    .button {
+        font-size: 1rem;
+        width: 100%; /* Allow buttons to stretch fully */
+        max-width: none; /* Remove the restriction on max-width */
+        padding: 0.7rem;
+    }
         }
 
         @media (min-width: 601px) {
