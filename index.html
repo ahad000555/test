@@ -15,18 +15,20 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            overflow: hidden;
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-        }
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh; /* Adjusted to allow content to flow beyond viewport */
+        padding: 1rem;
+        text-align: center;
+		}
+
+		html {
+			overflow-y: auto; /* Ensures scrolling works if content overflows */
+		}
 
         img {
             width: 120px;
@@ -38,7 +40,7 @@
         }
 
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #fff;
             margin-bottom: 0.5rem;
             font-weight: 600;
@@ -47,27 +49,26 @@
         p {
             font-size: 1.1rem;
             color: #b1b1b1;
-            line-height: 1.5;
-            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
             max-width: 600px;
-            margin: 0 auto 1.5rem auto;
+            margin: 0 auto 2rem auto;
         }
 
         .social-links {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-top: 1rem;
-            width: 100%;
         }
 
         .button {
             display: block;
-            width: 140px;
+            width: 160px;
             text-align: center;
-            padding: 0.7rem;
-            font-size: 1rem;
+            padding: 0.8rem;
+            font-size: 1.1rem;
             border-radius: 8px;
             color: #fff;
             text-decoration: none;
@@ -127,100 +128,51 @@
             margin-right: 8px;
         }
 
-        /* Footer Design */
         footer {
-            margin-top: 2.5rem;
-            padding: 1rem 0;
+            margin-top: 3rem;
+            padding: 1rem;
             background-color: #0f3460;
-            color: #fff;
-            width: 100%;
             text-align: center;
             font-size: 0.9rem;
-            box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
-            margin-top: auto;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
             color: #b1b1b1;
         }
 
-        /* Mobile Specific Styles */
-        @media (max-width: 768px) {
+        footer a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
             h1 {
                 font-size: 1.6rem;
             }
 
             p {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 line-height: 1.5;
                 padding: 0 1rem;
             }
 
-            .button {
-                font-size: 0.9rem;
-                width: 120px;
-                padding: 0.6rem;
-            }
-
-            footer {
-                font-size: 0.8rem;
-                padding: 1rem 0;
-            }
-
-            footer p {
-                font-size: 0.8rem;
-            }
-
-            footer .footer-links {
-                display: flex;
+            .social-links {
                 flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
-                margin-top: 1rem;
+                gap: 1rem;
             }
 
-            footer .footer-links a {
-                font-size: 0.9rem;
-                margin: 0.5rem 0;
+            .button {
+                font-size: 1rem;
+                width: 100%;
+                max-width: 250px;
+                padding: 0.7rem;
             }
         }
 
-        /* Small Mobile Specific Styles */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.4rem;
-            }
-
-            p {
-                font-size: 0.9rem;
-                padding: 0 1rem;
-            }
-
-            .button {
-                font-size: 0.9rem;
-                width: 100%;
-                padding: 0.6rem;
-            }
-
-            footer {
-                padding: 1rem 0;
-                font-size: 0.7rem;
-            }
-
-            footer p {
-                font-size: 0.7rem;
-            }
-
-            footer .footer-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 0.5rem;
-            }
-
-            footer .footer-links a {
-                font-size: 0.8rem;
+        @media (min-width: 601px) {
+            .social-links {
+                flex-direction: row;
             }
         }
     </style>
@@ -252,7 +204,9 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Abdul Ahad</p>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved. <br>
+           <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </p>
     </footer>
 </body>
 </html>
