@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Ahad - Profile</title>
+    <title>My Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Global Reset */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
@@ -24,23 +24,28 @@
             min-height: 100vh;
             text-align: center;
             margin: 0;
-            padding: 0;
         }
 
         html {
             overflow-y: auto;
         }
 
-        /* Profile Section */
-        .profile-container {
+        /* Container Styling */
+        .container {
             width: 100%;
-            max-width: 850px;
-            margin-top: 30px;
-            text-align: center;
-            padding: 20px;
-            border-radius: 12px;
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            padding: 2rem;
+            background: #1e1e3f;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin: 2rem;
+        }
+
+        /* Profile Image */
+        .profile-image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
 
         img {
@@ -48,22 +53,22 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            margin-bottom: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
+        /* Header and Description */
         h1 {
             font-size: 2rem;
             color: #fff;
+            margin: 0.5rem 0;
             font-weight: 700;
-            margin-bottom: 10px;
         }
 
         p {
             font-size: 1.1rem;
-            color: #d1d1d1;
+            color: #b1b1b1;
             line-height: 1.6;
-            margin-bottom: 25px;
+            margin-bottom: 2rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -74,19 +79,18 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 2rem;
         }
 
         .button {
-            text-decoration: none;
-            padding: 1rem 2rem;
+            padding: 12px 25px;
             font-size: 1.1rem;
             font-weight: bold;
-            border-radius: 30px;
+            border-radius: 50px;
             color: #fff;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .button-resume {
@@ -95,6 +99,7 @@
 
         .button-resume:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
         }
 
         .button-website {
@@ -103,6 +108,7 @@
 
         .button-website:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
         }
 
         /* Social Media Buttons Section */
@@ -110,13 +116,12 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            margin-top: 2rem;
         }
 
         .social-button {
-            width: 55px;
-            height: 55px;
+            width: 50px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -125,12 +130,12 @@
             font-size: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
             transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
 
         .facebook {
@@ -164,37 +169,45 @@
         /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
 
             p {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 line-height: 1.5;
                 padding: 0 1rem;
             }
 
-            .button {
-                font-size: 1rem;
-                padding: 0.8rem 1.5rem;
-                width: 100%;
+            .action-buttons {
+                flex-direction: column;
+                gap: 1.5rem;
             }
 
-            .social-button {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+            .button {
+                font-size: 1rem;
+                width: 100%;
+                padding: 12px;
             }
 
             .social-section {
-                gap: 1rem;
+                flex-wrap: wrap;
+                gap: 1.2rem;
+            }
+
+            .social-button {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="profile-container">
+    <div class="container">
         <!-- Profile Section -->
-        <img src="profile.jpg" alt="Profile Picture">
+        <div class="profile-image-container">
+            <img src="profile.jpg" alt="Profile Picture">
+        </div>
         <h1>ABDUL AHAD</h1>
         <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
 
