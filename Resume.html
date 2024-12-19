@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .resume-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 20px;
+        }
+        .resume-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .instruction {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .button {
+            padding: 10px 35px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(145deg, #007BFF, #0056b3);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background: linear-gradient(145deg, #0056b3, #007BFF);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        /* Media query for larger screens (laptops and desktops) */
+        @media (min-width: 768px) {
+            .instruction {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            .button-container {
+                gap: 30px;
+            }
+            .button {
+                padding: 15px 35px;
+                font-size: 16px;
+            }
+        }
+
+        /* Styles for printing */
+        @media print {
+            body {
+                background-color: white;
+                margin: 0;
+                font-family: 'Helvetica Neue', Arial, sans-serif;
+            }
+            .resume-container {
+                margin: 0;
+                padding: 0;
+                border: none;
+                box-shadow: none;
+                max-width: 100%;
+                width: 100%;
+            }
+            .resume-container img {
+                max-width: 100%;
+                height: auto;
+            }
+            .instruction,
+            .button-container {
+                display: none; /* Hide instructions and buttons */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <img src="ahad-resume.jpg" alt="Resume" id="resumeImage">
+    </div>
+    <div class="instruction">To download or print please click the buttons or press <strong>CTRL + P</strong> </div>
+    <div class="button-container">
+        <button class="button" onclick="downloadResume()">Download</button>
+        <button class="button" onclick="printResume()">Print</button>
+    </div>
+
+    <script>
+        function downloadResume() {
+            const image = document.getElementById('resumeImage');
+            const link = document.createElement('a');
+            link.href = image.src; // Path to your resume file
+            link.download = 'ahad-resume.jpg'; // Name for the downloaded file
+            link.click();
+        }
+
+        function printResume() {
+            const originalContent = document.body.innerHTML;
+            const resumeContent = document.querySelector('.resume-container').innerHTML;
+            document.body.innerHTML = resumeContent;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+</body>
+</html>
