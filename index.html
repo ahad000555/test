@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
             display: flex;
             justify-content: center;
@@ -26,36 +26,33 @@
             text-align: center;
         }
 
-        html {
-            overflow-y: auto;
-        }
-
         img {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 5px solid #e94560;
+            border: 5px solid #ff6b6b;
             margin-bottom: 1.5rem;
             object-fit: cover;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: #fff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             font-weight: bold;
         }
 
         p {
-            font-size: 1.2rem;
-            color: #b1b1b1;
+            font-size: 1.1rem;
+            color: #d9d9d9;
             line-height: 1.8;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             max-width: 700px;
+            margin: 0 auto 2.5rem auto;
         }
 
-        /* Action Buttons Section */
+        /* Premium Button Design */
         .action-buttons {
             display: flex;
             justify-content: center;
@@ -63,87 +60,54 @@
             margin-bottom: 3rem;
         }
 
-        .button {
+        .action-buttons a {
             text-decoration: none;
             padding: 1rem 2rem;
             font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 50px;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
             color: #fff;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .button-resume {
-            background: linear-gradient(45deg, #4caf50, #81c784);
+        .action-buttons a:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
-        .button-resume:hover {
-            transform: scale(1.1);
-        }
-
-        .button-website {
-            background: linear-gradient(45deg, #2196f3, #64b5f6);
-        }
-
-        .button-website:hover {
-            transform: scale(1.1);
-        }
-
-        /* Social Buttons Section */
-        .social-section {
+        /* Social Buttons */
+        .social-links {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            justify-content: center;
+            gap: 1rem;
         }
 
-        .social-button {
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 60px;
             height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border-radius: 50%;
+            background: #1f2833;
             color: #fff;
             font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .social-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        .social-links a:hover {
+            background: linear-gradient(45deg, #3b5998, #1da1f2);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
 
-        .facebook {
-            background: #3b5998;
-        }
-
-        .instagram {
-            background: #e4405f;
-        }
-
-        .twitter {
-            background: #1da1f2;
-        }
-
-        .linkedin {
-            background: #0077b5;
-        }
-
-        .whatsapp {
-            background: #25d366;
-        }
-
-        .mail {
-            background: #f39c12;
-        }
-
-        .contact {
-            background: #4caf50;
+        .social-links a i {
+            margin: 0;
         }
 
         @media (max-width: 600px) {
@@ -159,22 +123,11 @@
 
             .action-buttons {
                 flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .social-links {
                 gap: 1rem;
-            }
-
-            .button {
-                font-size: 1rem;
-                width: 100%;
-            }
-
-            .social-section {
-                gap: 1rem;
-            }
-
-            .social-button {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
             }
         }
     </style>
@@ -184,33 +137,21 @@
     <h1>ABDUL AHAD</h1>
     <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
 
+    <!-- Premium Buttons -->
     <div class="action-buttons">
-        <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
-        <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
+        <a href="resume.pdf" target="_blank">My Resume</a>
+        <a href="https://yourwebsite.com" target="_blank">Website</a>
     </div>
 
-    <div class="social-section">
-        <a href="https://facebook.com" target="_blank" class="social-button facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="social-button instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-button twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="tel:+1234567890" target="_blank" class="social-button contact">
-            <i class="fas fa-phone"></i>
-        </a>
+    <!-- Social Links Section -->
+    <div class="social-links">
+        <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/+1234567890" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:youremail@example.com" target="_blank" title="Mail"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+1234567890" target="_blank" title="Contact"><i class="fas fa-phone"></i></a>
     </div>
 </body>
 </html>
