@@ -31,73 +31,128 @@
         }
 
         img {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 4px solid #e94560;
-            margin-bottom: 1rem;
+            border: 5px solid #e94560;
+            margin-bottom: 1.5rem;
             object-fit: cover;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #fff;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
+            margin-bottom: 1rem;
+            font-weight: bold;
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #b1b1b1;
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+            max-width: 700px;
         }
 
+        /* Action Buttons Section */
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .button {
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             font-size: 1.2rem;
-            font-weight: 500;
-            border-radius: 8px;
+            font-weight: bold;
+            border-radius: 50px;
             color: #fff;
             transition: all 0.3s ease;
-            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .button-resume {
-            background: #4caf50;
+            background: linear-gradient(45deg, #4caf50, #81c784);
         }
 
         .button-resume:hover {
-            background: #388e3c;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .button-website {
-            background: #2196f3;
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
         }
 
         .button-website:hover {
-            background: #1976d2;
-            transform: scale(1.05);
+            transform: scale(1.1);
+        }
+
+        /* Social Buttons Section */
+        .social-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-button {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: #e4405f;
+        }
+
+        .twitter {
+            background: #1da1f2;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .mail {
+            background: #f39c12;
+        }
+
+        .contact {
+            background: #4caf50;
         }
 
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             p {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 line-height: 1.5;
                 padding: 0 1rem;
             }
@@ -111,6 +166,16 @@
                 font-size: 1rem;
                 width: 100%;
             }
+
+            .social-section {
+                gap: 1rem;
+            }
+
+            .social-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -122,6 +187,30 @@
     <div class="action-buttons">
         <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
         <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
+    </div>
+
+    <div class="social-section">
+        <a href="https://facebook.com" target="_blank" class="social-button facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-button instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" class="social-button twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+1234567890" target="_blank" class="social-button contact">
+            <i class="fas fa-phone"></i>
+        </a>
     </div>
 </body>
 </html>
