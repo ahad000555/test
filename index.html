@@ -70,7 +70,6 @@
 
         /* Contact Details Section */
         .contact-details {
-            
             margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
         }
 
@@ -157,50 +156,80 @@
         }
 
         .social-button {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
             font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(145deg, #2c2c54, #3e3e74);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(145deg, #4c4c74, #5e5e94);
         }
 
         .facebook {
-            background: #3b5998;
+            background: linear-gradient(45deg, #3b5998, #4b70b8);
+        }
+
+        .facebook:hover {
+            background: linear-gradient(45deg, #4b70b8, #5c89d8);
         }
 
         .instagram {
-            background: #e4405f;
+            background: linear-gradient(45deg, #e4405f, #f06277);
+        }
+
+        .instagram:hover {
+            background: linear-gradient(45deg, #f06277, #fc8295);
         }
 
         .twitter {
-            background: #1da1f2;
+            background: linear-gradient(45deg, #1da1f2, #33baf3);
+        }
+
+        .twitter:hover {
+            background: linear-gradient(45deg, #33baf3, #4cccf4);
         }
 
         .linkedin {
-            background: #0077b5;
+            background: linear-gradient(45deg, #0077b5, #1486cc);
+        }
+
+        .linkedin:hover {
+            background: linear-gradient(45deg, #1486cc, #2e9ddc);
         }
 
         .whatsapp {
-            background: #25d366;
+            background: linear-gradient(45deg, #25d366, #34e37e);
+        }
+
+        .whatsapp:hover {
+            background: linear-gradient(45deg, #34e37e, #45f490);
         }
 
         .mail {
-            background: #f39c12;
+            background: linear-gradient(45deg, #f39c12, #f3af32);
+        }
+
+        .mail:hover {
+            background: linear-gradient(45deg, #f3af32, #f3c052);
         }
 
         .contact {
-            background: #4caf50;
+            background: linear-gradient(45deg, #4caf50, #66cc70);
+        }
+
+        .contact:hover {
+            background: linear-gradient(45deg, #66cc70, #7ee380);
         }
 
         /* Responsive Design */
@@ -230,16 +259,9 @@
             }
 
             .social-button {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
                 font-size: 1.2rem;
-            }
-            .contact-header {
-            visibility: hidden;
-        }
-
-            .contact-item {
-                padding: 0.8rem 1rem;
             }
         }
     </style>
