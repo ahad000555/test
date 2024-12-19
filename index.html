@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: #1c1c1c;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -26,10 +26,6 @@
             text-align: center;
         }
 
-        html {
-            overflow-y: auto;
-        }
-
         /* Profile Image */
         img {
             width: 120px;
@@ -37,15 +33,15 @@
             border-radius: 50%;
             margin-bottom: 1.5rem;
             object-fit: cover;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
         /* Profile Header */
         h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #fff;
             margin-bottom: 0.5rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         p {
@@ -61,10 +57,10 @@
         .section-container {
             width: 100%;
             max-width: 900px;
-            padding: 1.5rem;
-            background: rgba(0, 0, 0, 0.7);
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
             margin-top: -2rem;
         }
 
@@ -74,38 +70,38 @@
         }
 
         .contact-header {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
-            margin-bottom: 1.2rem;
-            color: #e94560;
+            margin-bottom: 1.5rem;
+            color: #ff5722;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
+            gap: 1rem;
             align-items: center;
         }
 
         .contact-item {
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
+            gap: 1rem;
             width: 100%;
             max-width: 600px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .contact-item i {
-            font-size: 1.2rem;
-            color: #4caf50;
+            font-size: 1.4rem;
+            color: #ff5722;
         }
 
         .contact-item span {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #fff;
         }
 
@@ -129,7 +125,7 @@
         }
 
         .button-resume {
-            background: linear-gradient(45deg, #4caf50, #81c784);
+            background: #ff5722;
         }
 
         .button-resume:hover {
@@ -138,7 +134,7 @@
         }
 
         .button-website {
-            background: linear-gradient(45deg, #2196f3, #64b5f6);
+            background: #2196f3;
         }
 
         .button-website:hover {
@@ -150,10 +146,9 @@
         .social-section {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-top: 3rem;
             flex-wrap: wrap;
-            position: relative;
         }
 
         /* Stylized Header for Social Section */
@@ -167,73 +162,73 @@
             text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
         }
 
-        /* Individual Social Buttons */
+        /* Social Button Design */
         .social-button {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
             font-size: 1.4rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #333;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
         .social-button i {
             transition: transform 0.3s ease;
         }
 
-        /* Social Button Color & Gradient Styles */
-        .facebook {
-            background: linear-gradient(45deg, #3b5998, #4c69ba);
-        }
-        .instagram {
-            background: linear-gradient(45deg, #e4405f, #f58529);
-        }
-        .twitter {
-            background: linear-gradient(45deg, #1da1f2, #2d9bf0);
-        }
-        .linkedin {
-            background: linear-gradient(45deg, #0077b5, #00a0dc);
-        }
-        .whatsapp {
-            background: linear-gradient(45deg, #25d366, #4dc34d);
-        }
-        .mail {
-            background: linear-gradient(45deg, #f39c12, #f1c40f);
-        }
-        .contact {
-            background: linear-gradient(45deg, #4caf50, #81c784);
-        }
-
-        /* Hover Effects for Buttons */
+        /* Social Button Hover Effects */
         .social-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, #fff, #f1f1f1); /* Lighten background on hover */
+            transform: scale(1.1);
+            background-color: #444;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
 
         .social-button:hover i {
-            transform: scale(1.2); /* Increase icon size on hover */
+            transform: scale(1.2);
         }
 
-        /* Social Button Active/Click Effects */
-        .social-button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        /* Specific Social Media Button Colors */
+        .facebook {
+            background-color: #3b5998;
         }
 
-        /* Mobile Responsiveness */
+        .instagram {
+            background-color: #e4405f;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .linkedin {
+            background-color: #0077b5;
+        }
+
+        .whatsapp {
+            background-color: #25d366;
+        }
+
+        .mail {
+            background-color: #f39c12;
+        }
+
+        .contact {
+            background-color: #4caf50;
+        }
+
+        /* Responsive Design */
         @media (max-width: 600px) {
             .social-section {
-                gap: 1.5rem;
+                gap: 1rem;
             }
-            
+
             .social-button {
                 width: 50px;
                 height: 50px;
