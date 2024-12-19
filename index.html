@@ -22,7 +22,7 @@
             align-items: center;
             flex-direction: column;
             min-height: 100vh;
-            padding: 1rem;
+            padding: 2rem;
             text-align: center;
         }
 
@@ -53,6 +53,19 @@
             line-height: 1.8;
             margin-bottom: 2rem;
             max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Container */
+        .section-container {
+            width: 100%;
+            max-width: 900px;
+            margin-top: 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
         }
 
         /* Action Buttons Section */
@@ -96,7 +109,7 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .social-button {
@@ -146,6 +159,7 @@
             background: #4caf50;
         }
 
+        /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
                 font-size: 1.8rem;
@@ -180,37 +194,44 @@
     </style>
 </head>
 <body>
-    <img src="profile.jpg" alt="Profile Picture">
-    <h1>ABDUL AHAD</h1>
-    <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+    <div class="section-container">
+        <!-- Profile Section -->
+        <div class="section-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>ABDUL AHAD</h1>
+            <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+        </div>
 
-    <div class="action-buttons">
-        <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
-        <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
-    </div>
+        <!-- Action Buttons Section -->
+        <div class="action-buttons">
+            <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
+            <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
+        </div>
 
-    <div class="social-section">
-        <a href="https://facebook.com" target="_blank" class="social-button facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="social-button instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-button twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="tel:+1234567890" target="_blank" class="social-button contact">
-            <i class="fas fa-phone"></i>
-        </a>
+        <!-- Social Media Buttons Section -->
+        <div class="social-section">
+            <a href="https://facebook.com" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+1234567890" target="_blank" class="social-button contact">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
     </div>
 </body>
 </html>
