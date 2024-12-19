@@ -30,51 +30,61 @@
             overflow-y: auto;
         }
 
-        /* Profile Picture Styling */
         img {
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 5px solid #e94560;
-            margin-bottom: 1.5rem;
+            border: 4px solid #e94560;
+            margin-bottom: 1rem;
             object-fit: cover;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Heading Styling */
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #fff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             font-weight: bold;
         }
 
-        /* Description Styling */
         p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #b1b1b1;
-            line-height: 1.8;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
             max-width: 700px;
-            margin: 0 auto 3rem auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Container */
+        .section-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 2rem;
+        }
+
+        .section-header {
+            margin-bottom: 1.5rem;
         }
 
         /* Action Buttons Section */
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .button {
             text-decoration: none;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
+            padding: 0.8rem 1.6rem;
+            font-size: 1rem;
             font-weight: bold;
             border-radius: 50px;
             color: #fff;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .button-resume {
@@ -82,7 +92,7 @@
         }
 
         .button-resume:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .button-website {
@@ -90,7 +100,7 @@
         }
 
         .button-website:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         /* Social Buttons Section */
@@ -98,27 +108,27 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1rem;
+            margin-top: 2.5rem;
         }
 
         .social-button {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .facebook {
@@ -152,11 +162,11 @@
         /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
 
             p {
-                font-size: 1rem;
+                font-size: 0.9rem;
                 line-height: 1.5;
                 padding: 0 1rem;
             }
@@ -176,47 +186,52 @@
             }
 
             .social-button {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <img src="profile.jpg" alt="Profile Picture">
-    <h1>ABDUL AHAD</h1>
-    <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+    <div class="section-container">
+        <!-- Profile Section -->
+        <div class="section-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>ABDUL AHAD</h1>
+            <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+        </div>
 
-    <!-- Action Buttons: Resume and Website -->
-    <div class="action-buttons">
-        <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
-        <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
-    </div>
+        <!-- Action Buttons Section -->
+        <div class="action-buttons">
+            <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
+            <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
+        </div>
 
-    <!-- Social Media Section -->
-    <div class="social-section">
-        <a href="https://facebook.com" target="_blank" class="social-button facebook">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://instagram.com" target="_blank" class="social-button instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://twitter.com" target="_blank" class="social-button twitter">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="tel:+1234567890" target="_blank" class="social-button contact">
-            <i class="fas fa-phone"></i>
-        </a>
+        <!-- Social Media Buttons Section -->
+        <div class="social-section">
+            <a href="https://facebook.com" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+1234567890" target="_blank" class="social-button contact">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
     </div>
 </body>
 </html>
