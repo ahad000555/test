@@ -70,7 +70,7 @@
 
         /* Contact Details Section */
         .contact-details {
-            margin: 2.5rem 0 2.5rem;
+            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
         }
 
         .contact-header {
@@ -150,39 +150,36 @@
         .social-section {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
+            gap: 2rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
-            width: 100%;
-            justify-content: space-evenly;
+            align-items: center;
         }
 
         .social-header {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            color: #fff;
             margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            color: #e94560;
         }
 
         .social-button {
-            width: 55px;
-            height: 55px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.3rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
-            transform: scale(1.2);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
 
         .facebook {
@@ -240,9 +237,17 @@
             }
 
             .social-button {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .contact-header {
+                visibility: hidden;
+            }
+
+            .contact-item {
+                padding: 0.8rem 1rem;
             }
         }
     </style>
@@ -282,7 +287,7 @@
         </div>
 
         <!-- Social Media Buttons Section -->
-        <div class="social-header">Connect with me</div>
+        <div class="social-header">Connect With Me</div>
         <div class="social-section">
             <a href="https://facebook.com" target="_blank" class="social-button facebook">
                 <i class="fab fa-facebook-f"></i>
