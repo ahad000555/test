@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #2a2a72, #009ffd);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
             display: flex;
             justify-content: center;
@@ -31,28 +31,22 @@
             overflow-y: auto;
         }
 
-        /* Profile Section */
-        .profile-container {
-            width: 100%;
-            max-width: 800px;
-            margin-top: -5rem;
-        }
-
+        /* Profile Image */
         img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             object-fit: cover;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
+        /* Header and description */
         h1 {
             font-size: 2rem;
             color: #fff;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
         }
 
         p {
@@ -61,28 +55,41 @@
             line-height: 1.6;
             margin-bottom: 2rem;
             max-width: 600px;
-            margin: 0 auto 2rem auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Section Container */
+        .section-container {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+            background-color: #16213e;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-header {
+            margin-bottom: 2rem;
         }
 
         /* Action Buttons Section */
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             margin-bottom: 2rem;
         }
 
         .button {
-            padding: 1rem 2rem;
+            text-decoration: none;
+            padding: 0.9rem 1.8rem;
             font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: bold;
             border-radius: 50px;
             color: #fff;
             transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
-            text-decoration: none;
-            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .button-resume {
@@ -91,7 +98,6 @@
 
         .button-resume:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .button-website {
@@ -100,16 +106,15 @@
 
         .button-website:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
-        /* Social Media Buttons Section */
-        .social-buttons {
+        /* Social Buttons Section */
+        .social-section {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 3rem;
+            gap: 1.8rem;
+            margin-top: 2.5rem;
         }
 
         .social-button {
@@ -120,24 +125,44 @@
             align-items: center;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
             transform: scale(1.2);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
 
-        .facebook { background: #3b5998; }
-        .instagram { background: #e4405f; }
-        .twitter { background: #1da1f2; }
-        .linkedin { background: #0077b5; }
-        .whatsapp { background: #25d366; }
-        .mail { background: #f39c12; }
-        .contact { background: #4caf50; }
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: #e4405f;
+        }
+
+        .twitter {
+            background: #1da1f2;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .mail {
+            background: #f39c12;
+        }
+
+        .contact {
+            background: #4caf50;
+        }
 
         /* Responsive Design */
         @media (max-width: 600px) {
@@ -146,8 +171,8 @@
             }
 
             p {
-                font-size: 1rem;
-                line-height: 1.6;
+                font-size: 0.9rem;
+                line-height: 1.5;
                 padding: 0 1rem;
             }
 
@@ -161,24 +186,26 @@
                 width: 100%;
             }
 
-            .social-buttons {
-                gap: 1rem;
+            .social-section {
+                gap: 1.5rem;
             }
 
             .social-button {
                 width: 50px;
                 height: 50px;
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="profile-container">
+    <div class="section-container">
         <!-- Profile Section -->
-        <img src="profile.jpg" alt="Profile Picture">
-        <h1>ABDUL AHAD</h1>
-        <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+        <div class="section-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>ABDUL AHAD</h1>
+            <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+        </div>
 
         <!-- Action Buttons Section -->
         <div class="action-buttons">
@@ -187,7 +214,7 @@
         </div>
 
         <!-- Social Media Buttons Section -->
-        <div class="social-buttons">
+        <div class="social-section">
             <a href="https://facebook.com" target="_blank" class="social-button facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
