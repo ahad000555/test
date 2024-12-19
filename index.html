@@ -15,7 +15,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            background: linear-gradient(135deg, #2a2a72, #009ffd);
             color: #fff;
             display: flex;
             justify-content: center;
@@ -23,6 +23,7 @@
             flex-direction: column;
             min-height: 100vh;
             text-align: center;
+            padding: 0;
             margin: 0;
         }
 
@@ -30,38 +31,28 @@
             overflow-y: auto;
         }
 
-        /* Container Styling */
-        .container {
+        /* Profile Section */
+        .profile-container {
             width: 100%;
-            max-width: 900px;
-            padding: 2rem;
-            background: #1e1e3f;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            margin: 2rem;
-        }
-
-        /* Profile Image */
-        .profile-image-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-top: -5rem;
         }
 
         img {
             width: 120px;
             height: 120px;
             border-radius: 50%;
+            margin-bottom: 1rem;
             object-fit: cover;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Header and Description */
         h1 {
             font-size: 2rem;
             color: #fff;
-            margin: 0.5rem 0;
+            margin-bottom: 0.5rem;
             font-weight: 700;
+            letter-spacing: 0.5px;
         }
 
         p {
@@ -69,28 +60,29 @@
             color: #b1b1b1;
             line-height: 1.6;
             margin-bottom: 2rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
         }
 
         /* Action Buttons Section */
         .action-buttons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin-bottom: 2rem;
         }
 
         .button {
-            padding: 12px 25px;
+            padding: 1rem 2rem;
             font-size: 1.1rem;
-            font-weight: bold;
+            font-weight: 600;
             border-radius: 50px;
             color: #fff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
             text-decoration: none;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            display: inline-block;
         }
 
         .button-resume {
@@ -99,7 +91,7 @@
 
         .button-resume:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         .button-website {
@@ -108,106 +100,83 @@
 
         .button-website:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
         /* Social Media Buttons Section */
-        .social-section {
+        .social-buttons {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             gap: 1.5rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .social-button {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
             font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
         .social-button:hover {
             transform: scale(1.2);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
 
-        .facebook {
-            background: #3b5998;
-        }
-
-        .instagram {
-            background: #e4405f;
-        }
-
-        .twitter {
-            background: #1da1f2;
-        }
-
-        .linkedin {
-            background: #0077b5;
-        }
-
-        .whatsapp {
-            background: #25d366;
-        }
-
-        .mail {
-            background: #f39c12;
-        }
-
-        .contact {
-            background: #4caf50;
-        }
+        .facebook { background: #3b5998; }
+        .instagram { background: #e4405f; }
+        .twitter { background: #1da1f2; }
+        .linkedin { background: #0077b5; }
+        .whatsapp { background: #25d366; }
+        .mail { background: #f39c12; }
+        .contact { background: #4caf50; }
 
         /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             p {
-                font-size: 0.9rem;
-                line-height: 1.5;
+                font-size: 1rem;
+                line-height: 1.6;
                 padding: 0 1rem;
             }
 
             .action-buttons {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
             .button {
                 font-size: 1rem;
                 width: 100%;
-                padding: 12px;
             }
 
-            .social-section {
-                flex-wrap: wrap;
-                gap: 1.2rem;
+            .social-buttons {
+                gap: 1rem;
             }
 
             .social-button {
-                width: 45px;
-                height: 45px;
-                font-size: 1.2rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="profile-container">
         <!-- Profile Section -->
-        <div class="profile-image-container">
-            <img src="profile.jpg" alt="Profile Picture">
-        </div>
+        <img src="profile.jpg" alt="Profile Picture">
         <h1>ABDUL AHAD</h1>
         <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
 
@@ -218,7 +187,7 @@
         </div>
 
         <!-- Social Media Buttons Section -->
-        <div class="social-section">
+        <div class="social-buttons">
             <a href="https://facebook.com" target="_blank" class="social-button facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
