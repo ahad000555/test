@@ -107,35 +107,42 @@
 
         /* Contact Details Section */
         .contact-details {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-
-        .contact-card {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
         }
 
-        .contact-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-card h3 {
-            font-size: 1.2rem;
+        .contact-details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: #fff;
-            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
-        .contact-card p {
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
             font-size: 1rem;
             color: #b1b1b1;
+        }
+
+        .contact-item i {
+            margin-right: 1rem;
+            font-size: 1.3rem;
+            color: #e94560;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         /* Social Media Section */
@@ -216,6 +223,10 @@
                 width: 100%;
             }
 
+            .contact-details h2 {
+                font-size: 1.5rem;
+            }
+
             .social-section {
                 gap: 1rem;
             }
@@ -224,10 +235,6 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.2rem;
-            }
-
-            .contact-card {
-                padding: 1rem;
             }
         }
     </style>
@@ -249,17 +256,18 @@
 
         <!-- Contact Details Section -->
         <div class="contact-details">
-            <div class="contact-card">
-                <h3>Email</h3>
-                <p>youremail@example.com</p>
+            <h2>Contact Details:</h2>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+1234567890">+123 456 7890</a>
             </div>
-            <div class="contact-card">
-                <h3>Phone</h3>
-                <p>+1234567890</p>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:youremail@example.com">youremail@example.com</a>
             </div>
-            <div class="contact-card">
-                <h3>Location</h3>
-                <p>Dhaka, Bangladesh</p>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Dhaka, Bangladesh</span>
             </div>
         </div>
 
