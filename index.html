@@ -15,30 +15,35 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1a1a2e, #0f3460);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             min-height: 100vh;
-            padding: 2rem;
+            padding: 1rem;
             text-align: center;
         }
 
+        html {
+            overflow-y: auto;
+        }
+
         img {
-            width: 150px;
-            height: 150px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            border: 6px solid #e94560;
-            margin-bottom: 1rem;
+            border: 5px solid #e94560;
+            margin-bottom: 1.5rem;
             object-fit: cover;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
             font-size: 2.5rem;
             color: #fff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             font-weight: bold;
         }
 
@@ -46,7 +51,7 @@
             font-size: 1.2rem;
             color: #b1b1b1;
             line-height: 1.8;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             max-width: 700px;
         }
 
@@ -58,99 +63,112 @@
             margin-bottom: 3rem;
         }
 
-        .action-button {
+        .button {
+            text-decoration: none;
             padding: 1rem 2rem;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
-            text-decoration: none;
             color: #fff;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .action-button-resume {
-            background: #ff5722;
+        .button-resume {
+            background: linear-gradient(45deg, #4caf50, #81c784);
         }
 
-        .action-button-resume:hover {
-            background: #e64a19;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.5);
+        .button-resume:hover {
+            transform: scale(1.1);
         }
 
-        .action-button-website {
-            background: #4caf50;
+        .button-website {
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
         }
 
-        .action-button-website:hover {
-            background: #388e3c;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+        .button-website:hover {
+            transform: scale(1.1);
         }
 
-        /* Social Media Buttons */
-        .social-links {
+        /* Social Buttons Section */
+        .social-section {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
             margin-top: 2rem;
         }
 
         .social-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             width: 60px;
             height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 50%;
-            font-size: 1.5rem;
             color: #fff;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .facebook { background: #3b5998; }
-        .facebook:hover { background: #2d4373; }
+        .facebook {
+            background: #3b5998;
+        }
 
-        .instagram { background: #e4405f; }
-        .instagram:hover { background: #c2334e; }
+        .instagram {
+            background: #e4405f;
+        }
 
-        .twitter { background: #1da1f2; }
-        .twitter:hover { background: #0a84d7; }
+        .twitter {
+            background: #1da1f2;
+        }
 
-        .linkedin { background: #0077b5; }
-        .linkedin:hover { background: #005983; }
+        .linkedin {
+            background: #0077b5;
+        }
 
-        .whatsapp { background: #25d366; }
-        .whatsapp:hover { background: #128c7e; }
+        .whatsapp {
+            background: #25d366;
+        }
 
-        .email { background: #f44336; }
-        .email:hover { background: #d32f2f; }
+        .mail {
+            background: #f39c12;
+        }
 
-        .contact { background: #ffc107; }
-        .contact:hover { background: #ffa000; }
+        .contact {
+            background: #4caf50;
+        }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+                padding: 0 1rem;
+            }
+
             .action-buttons {
                 flex-direction: column;
                 gap: 1rem;
             }
 
-            .action-button {
+            .button {
+                font-size: 1rem;
                 width: 100%;
-                padding: 1rem 0;
             }
 
-            .social-links {
-                gap: 0.5rem;
+            .social-section {
+                gap: 1rem;
             }
 
             .social-button {
@@ -166,14 +184,12 @@
     <h1>ABDUL AHAD</h1>
     <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
 
-    <!-- Action Buttons -->
     <div class="action-buttons">
-        <a href="resume.pdf" target="_blank" class="action-button action-button-resume">My Resume</a>
-        <a href="https://yourwebsite.com" target="_blank" class="action-button action-button-website">Website</a>
+        <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
+        <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
     </div>
 
-    <!-- Social Media Buttons -->
-    <div class="social-links">
+    <div class="social-section">
         <a href="https://facebook.com" target="_blank" class="social-button facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
@@ -189,7 +205,7 @@
         <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="mailto:youremail@example.com" target="_blank" class="social-button email">
+        <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
             <i class="fas fa-envelope"></i>
         </a>
         <a href="tel:+1234567890" target="_blank" class="social-button contact">
