@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,58 +107,57 @@
 
         /* Social Media Section */
         .social-section {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
         }
 
         .social-button {
-            width: 50px;
-            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             color: #fff;
             font-size: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
         }
 
         .facebook {
-            background: #3b5998;
+            background: linear-gradient(45deg, #3b5998, #4e69a2);
         }
 
         .instagram {
-            background: #e4405f;
+            background: linear-gradient(45deg, #e4405f, #c13584);
         }
 
         .twitter {
-            background: #1da1f2;
+            background: linear-gradient(45deg, #1da1f2, #3498db);
         }
 
         .linkedin {
-            background: #0077b5;
+            background: linear-gradient(45deg, #0077b5, #1e88e5);
         }
 
         .whatsapp {
-            background: #25d366;
+            background: linear-gradient(45deg, #25d366, #128c7e);
         }
 
         .mail {
-            background: #f39c12;
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
         }
 
         .contact {
-            background: #4caf50;
+            background: linear-gradient(45deg, #4caf50, #388e3c);
         }
 
         /* Responsive Design */
@@ -185,12 +183,12 @@
             }
 
             .social-section {
-                gap: 1rem;
+                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
             }
 
             .social-button {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
                 font-size: 1.2rem;
             }
         }
