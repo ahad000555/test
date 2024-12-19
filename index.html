@@ -68,86 +68,189 @@
             margin-top: -2rem;
         }
 
-        /* Social Media Section */
-        .social-section {
-            margin-top: 3rem;
-            text-align: center;
+        /* Contact Details Section */
+        .contact-details {
+            margin: 2.5rem 0 2.5rem;
         }
 
-        .social-header {
-            font-size: 1.8rem;
-            color: #e94560;
+        .contact-header {
+            font-size: 1.6rem;
             font-weight: bold;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            color: #e94560;
         }
 
-        .social-buttons {
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #4caf50;
+        }
+
+        .contact-item span {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        /* Action Buttons Section */
+        .action-buttons {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
+        .button {
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-resume {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+        }
+
+        .button-resume:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-website {
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
+        }
+
+        .button-website:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Social Media Section */
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* Stylized Header for Social Section */
+        .social-header {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Individual Social Buttons */
         .social-button {
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
             text-decoration: none;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
 
-        .social-button:hover {
-            transform: scale(1.15);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        .social-button i {
+            transition: transform 0.3s ease;
         }
 
+        /* Social Button Color & Gradient Styles */
         .facebook {
-            background: linear-gradient(45deg, #3b5998, #6d84b4);
+            background: linear-gradient(45deg, #3b5998, #4c69ba);
         }
-
         .instagram {
-            background: linear-gradient(45deg, #e4405f, #ff8a8a);
+            background: linear-gradient(45deg, #e4405f, #f58529);
         }
-
         .twitter {
-            background: linear-gradient(45deg, #1da1f2, #67c9f8);
+            background: linear-gradient(45deg, #1da1f2, #2d9bf0);
         }
-
         .linkedin {
-            background: linear-gradient(45deg, #0077b5, #2ba3d5);
+            background: linear-gradient(45deg, #0077b5, #00a0dc);
         }
-
         .whatsapp {
-            background: linear-gradient(45deg, #25d366, #70e7a3);
+            background: linear-gradient(45deg, #25d366, #4dc34d);
         }
-
         .mail {
-            background: linear-gradient(45deg, #f39c12, #f4b659);
+            background: linear-gradient(45deg, #f39c12, #f1c40f);
         }
-
         .contact {
-            background: linear-gradient(45deg, #4caf50, #82e182);
+            background: linear-gradient(45deg, #4caf50, #81c784);
         }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .social-header {
-                font-size: 1.4rem;
-            }
+        /* Hover Effects for Buttons */
+        .social-button:hover {
+            transform: scale(1.2);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #fff, #f1f1f1); /* Lighten background on hover */
+        }
 
+        .social-button:hover i {
+            transform: scale(1.2); /* Increase icon size on hover */
+        }
+
+        /* Social Button Active/Click Effects */
+        .social-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .social-section {
+                gap: 1.5rem;
+            }
+            
             .social-button {
                 width: 50px;
                 height: 50px;
-                font-size: 1rem;
+                font-size: 1.3rem;
+            }
+
+            .social-header {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .contact-header {
+                visibility: hidden;
+            }
+
+            .contact-item {
+                padding: 0.8rem 1rem;
             }
         }
     </style>
@@ -167,32 +270,49 @@
             <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
         </div>
 
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <div class="contact-header">Contact Details</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+1234567890</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>youremail@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1234 Street Name, City, Country</span>
+                </div>
+            </div>
+        </div>
+
         <!-- Social Media Buttons Section -->
         <div class="social-section">
-            <div class="social-header">Follow Me</div>
-            <div class="social-buttons">
-                <a href="https://facebook.com" target="_blank" class="social-button facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="social-button instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-button twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+1234567890" target="_blank" class="social-button contact">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
+            <div class="social-header">Connect with Me</div>
+            <a href="https://facebook.com" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://wa.me/+1234567890" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:youremail@example.com" target="_blank" class="social-button mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+1234567890" target="_blank" class="social-button contact">
+                <i class="fas fa-phone"></i>
+            </a>
         </div>
     </div>
 </body>
