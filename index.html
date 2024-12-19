@@ -108,56 +108,57 @@
         /* Social Media Section */
         .social-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            gap: 1.5rem;
             margin-top: 3rem;
+            justify-items: center;
         }
 
         .social-button {
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 60px;
-            height: 60px;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .social-button:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         .facebook {
-            background: linear-gradient(45deg, #3b5998, #4e69a2);
+            background: #3b5998;
         }
 
         .instagram {
-            background: linear-gradient(45deg, #e4405f, #c13584);
+            background: #e4405f;
         }
 
         .twitter {
-            background: linear-gradient(45deg, #1da1f2, #3498db);
+            background: #1da1f2;
         }
 
         .linkedin {
-            background: linear-gradient(45deg, #0077b5, #1e88e5);
+            background: #0077b5;
         }
 
         .whatsapp {
-            background: linear-gradient(45deg, #25d366, #128c7e);
+            background: #25d366;
         }
 
         .mail {
-            background: linear-gradient(45deg, #f39c12, #f1c40f);
+            background: #f39c12;
         }
 
         .contact {
-            background: linear-gradient(45deg, #4caf50, #388e3c);
+            background: #4caf50;
         }
 
         /* Responsive Design */
@@ -183,13 +184,13 @@
             }
 
             .social-section {
-                grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+                gap: 1.5rem;
             }
 
             .social-button {
                 width: 50px;
                 height: 50px;
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
         }
     </style>
