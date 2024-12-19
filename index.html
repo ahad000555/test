@@ -106,37 +106,36 @@
         }
 
         /* Contact Details Section */
-        .contact-section {
-            background: rgba(0, 0, 0, 0.8);
+        .contact-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-card {
+            background: rgba(0, 0, 0, 0.7);
             padding: 1.5rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .contact-header {
-            font-size: 1.6rem;
+        .contact-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
             color: #fff;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.8rem;
             font-weight: 600;
         }
 
-        .contact-info {
-            color: #b1b1b1;
-            line-height: 1.6;
+        .contact-card p {
             font-size: 1rem;
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .contact-info a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
+            color: #b1b1b1;
         }
 
         /* Social Media Section */
@@ -227,9 +226,8 @@
                 font-size: 1.2rem;
             }
 
-            .contact-info {
-                font-size: 0.9rem;
-                text-align: center;
+            .contact-card {
+                padding: 1rem;
             }
         }
     </style>
@@ -250,12 +248,18 @@
         </div>
 
         <!-- Contact Details Section -->
-        <div class="contact-section">
-            <div class="contact-header">Contact Details:</div>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+1234567890">+123 456 7890</a></p>
-                <p><strong>Location:</strong> Dhaka, Bangladesh</p>
+        <div class="contact-details">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <p>youremail@example.com</p>
+            </div>
+            <div class="contact-card">
+                <h3>Phone</h3>
+                <p>+1234567890</p>
+            </div>
+            <div class="contact-card">
+                <h3>Location</h3>
+                <p>Dhaka, Bangladesh</p>
             </div>
         </div>
 
