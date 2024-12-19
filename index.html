@@ -30,30 +30,32 @@
             overflow-y: auto;
         }
 
+        /* Profile Picture Styling */
         img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            border: 6px solid #e94560;
+            border: 5px solid #e94560;
             margin-bottom: 1.5rem;
             object-fit: cover;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
+        /* Heading Styling */
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: #fff;
             margin-bottom: 0.8rem;
-            font-weight: 700;
+            font-weight: bold;
         }
 
+        /* Description Styling */
         p {
             font-size: 1.2rem;
             color: #b1b1b1;
             line-height: 1.8;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
         }
 
         /* Action Buttons Section */
@@ -61,12 +63,12 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .button {
             text-decoration: none;
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             font-size: 1.2rem;
             font-weight: bold;
             border-radius: 50px;
@@ -80,7 +82,7 @@
         }
 
         .button-resume:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         .button-website {
@@ -88,7 +90,7 @@
         }
 
         .button-website:hover {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         /* Social Buttons Section */
@@ -96,19 +98,19 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1.8rem;
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .social-button {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
             color: #fff;
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -147,9 +149,10 @@
             background: #4caf50;
         }
 
+        /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             p {
@@ -160,7 +163,7 @@
 
             .action-buttons {
                 flex-direction: column;
-                gap: 1.2rem;
+                gap: 1rem;
             }
 
             .button {
@@ -173,26 +176,25 @@
             }
 
             .social-button {
-                width: 55px;
-                height: 55px;
-                font-size: 1.5rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Profile Section -->
     <img src="profile.jpg" alt="Profile Picture">
     <h1>ABDUL AHAD</h1>
     <p>Currently pursuing a BSc in Computer Science and Engineering at NITER, University of Dhaka. Alongside my academic journey, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
 
-    <!-- Action Buttons Section -->
+    <!-- Action Buttons: Resume and Website -->
     <div class="action-buttons">
         <a href="resume.pdf" target="_blank" class="button button-resume">My Resume</a>
         <a href="https://yourwebsite.com" target="_blank" class="button button-website">Website</a>
     </div>
 
-    <!-- Social Media Buttons Section -->
+    <!-- Social Media Section -->
     <div class="social-section">
         <a href="https://facebook.com" target="_blank" class="social-button facebook">
             <i class="fab fa-facebook-f"></i>
