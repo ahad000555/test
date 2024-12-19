@@ -156,11 +156,24 @@
             align-items: center;
         }
 
+        /* Stylish Social Header */
         .social-header {
-            font-size: 1.6rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #e94560;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #e94560, #f39c12);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-header:hover {
+            transform: translateY(-5px);
         }
 
         .social-button {
