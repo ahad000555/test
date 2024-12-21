@@ -13,20 +13,14 @@
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
-		
-		body {
-            
-             background-color: #0d1b2a;
+        }
+
+        body {
+            background-color: #0d1b2a;
             color: #fff;
             overflow-x: hidden;
         }
-		
-		
-		
-		
-		
-		        /* Navigation Styles */
-        /* Navigation Styles */
+
         header {
             display: flex;
             justify-content: space-between;
@@ -35,11 +29,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 1.2rem 3rem; /* Slightly increased padding for spacing */
+            padding: 1.2rem 3rem;
             background-color: rgba(13, 27, 42, 0.95);
             z-index: 1000;
             transition: background-color 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow for a floating effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .logo {
@@ -68,30 +62,15 @@
             color: #fff;
             font-weight: 540;
             position: relative;
-            transition: color 0.3s, background-color 0.3s; /* Transition for background color */
-            padding: 10px 15px; /* Increased padding */
+            transition: color 0.3s, background-color 0.3s;
+            padding: 10px 15px;
             font-size: 14px;
-            border-radius: 5px; /* Rounded corners */
+            border-radius: 5px;
         }
 
-        /* Styles for dropdown menu when shown */
-        nav ul.show {
-            display: flex; /* Show flex when the menu is active */
-            flex-direction: column; /* Stack items vertically */
-            position: absolute;
-            top: 60px; /* Position the dropdown */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            background-color: rgba(13, 27, 42, 0.95); /* Semi-transparent background */
-            padding: 1rem; /* Padding for the dropdown */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-        }
-
-        /* Hover Effects for Menu Items */
         nav ul li a:hover {
-            color: #feda6a; /* Change text color on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+            color: #feda6a;
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         nav ul li a::before {
@@ -112,7 +91,6 @@
             transform-origin: bottom right;
         }
 
-        /* Glass Button Styles */
         .glass-button {
             display: inline-block;
             padding: 11px 27px;
@@ -127,7 +105,7 @@
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
-            margin-left: 20px; /* Adds a gap between button and the menu */
+            margin-left: 20px;
         }
 
         .glass-button:hover {
@@ -152,7 +130,6 @@
             left: 100%;
         }
 
-        /* Mobile Styles */
         .menu-icon {
             display: none;
             font-size: 30px;
@@ -161,93 +138,27 @@
         }
 
         @media (max-width: 768px) {
-            header {
-                padding: 1rem 2rem; /* Adjust padding for mobile */
-            }
-
             nav ul {
                 display: none;
-                flex-direction: column; /* Stack vertically on mobile */
-                width: 100%; /* Full width */
-                left: 0; /* Align to the left */
-                background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-                backdrop-filter: blur(10px); /* Blur effect for premium feel */
-                border-radius: 10px; /* Rounded corners */
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-                padding: 1rem; /* Padding for the dropdown */
-                transition: all 0.3s ease; /* Smooth transition */
+                flex-direction: column;
+                width: 100%;
+                left: 0;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 10px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+                padding: 1rem;
+                transition: all 0.3s ease;
             }
 
             nav ul.show {
-                display: flex; /* Show the menu when toggled */
+                display: flex;
             }
-
-            nav ul li {
-                margin: 5px 0px;
-                padding-bottom: 5px;
-                text-align: left; /* Align text to the left */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Divider between items */
-                padding-left: 20px; /* Add padding for left alignment */
-            }
-
-            nav ul li:last-child {
-                border-bottom: none; /* Remove border from the last item */
-            }
-
-            nav ul li a {
-                font-size: 14px; /* Larger font for readability */
-                padding: 10px 15px; /* Padding for touch devices */
-                color: #ffff; /* Primary color for text */
-                /* Removed hover transition effects for mobile */
-            }
-
-            nav ul li a:hover {
-                /* Removed hover effects for mobile */
-				background: transparent; /* No background change */
-				color: #ffd400; /* No color change */
-				
-            }
-			
-			
-			
-			nav ul li a::before {
-				content: '';
-				position: absolute;
-				bottom: 0px;
-				left: 0;
-				width: 0%;
-				height: 0px;
-				background-color: transparent;
-				transform: scaleX(0);
-				transform-origin: bottom left;
-				transition: transform 0.3s ease;
-			}
-
-			nav ul li a:hover::before {
-				transform: scaleX(0);
-				transform-origin: bottom right;
-			}
 
             .menu-icon {
                 display: block;
-                margin-top: -4%;
-                margin-right: -10px;
-            }
-
-            /* Adjust Contact Button for Mobile */
-            .glass-button {
-                display: inline-block;
-                font-size: 12px; /* Larger font for readability */
-                padding: 10px 20px; /* Adjusted padding */
-                margin-right: 20px;
             }
         }
-
-
-		
-		
-		
-		
 
         .container {
             display: flex;
@@ -257,8 +168,8 @@
             position: relative;
             padding: 50px;
             text-align: left;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-			margin-top: 100px;
+            flex-wrap: wrap;
+            margin-top: 100px;
         }
 
         .bg-image {
@@ -274,152 +185,50 @@
         }
 
         .content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    width: 95%; /* Increased width for responsiveness */
-    max-width: 1400px; /* Increased max width */
-    background-color: rgba(13, 27, 42, 0.85); /* Slightly transparent Dark Blue */
-    border-radius: 8px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    margin: 0 auto; /* Center the content */
-}
-
+            position: relative;
+            z-index: 2;
+            display: flex;
+            width: 90%; /* Adjusted width for better responsiveness */
+            max-width: 1400px; /* Increased max width */
+            background-color: rgba(13, 27, 42, 0.85);
+            border-radius: 8px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+            margin: 0 auto;
+        }
 
         .contact-info {
             flex: 1;
-            padding-right: 20px; /* Space between columns */
-        }
-
-        .contact-info h2 {
-            font-size: 25px;
-            color: #f4d160; /* Gold */
-            margin-bottom: 10px;
-        }
-
-        .contact-info p {
-			font-size: 13px;
-            margin-bottom: 15px;
-            color: #aad1e6; /* Light Blue */
-        }
-
-        .social-media {
-            margin-top: 230px;
-        }
-		.social-media h3{
-		margin-bottom: 10px;
-		}
-
-        .social-media a {
-            color: #f4d160; /* Gold */
-            margin-right: 15px;
-            font-size: 22px;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #e1c15c; /* Darker Gold */
+            padding-right: 20px;
         }
 
         .form-container {
             flex: 1;
-            padding-left: 20px; /* Space between columns */
-        }
-		.form-container h2{
-		font-size: px;
-		margin-bottom: 5px;
-		}
-        .form-group {
-            margin-bottom: 20px;
+            padding-left: 20px;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #1f2a38; /* Darker Background for inputs */
-            color: #ffffff;
-            font-size: 16px;
-            transition: border-color 0.3s;
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                padding: 20px;
+                width: 95%;
+                max-width: 600px;
+            }
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border: 2px solid #f4d160; /* Gold */
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f4d160; /* Gold */
-            color: #0d1b2a; /* Dark Blue for text */
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #e1c15c; /* Darker Gold */
-            transform: translateY(-2px); /* Slight lift effect */
-        }
-		
-		
-		
-/* Footer */
         footer {
             background-color: #0d1b2a;
             padding: 2rem;
             text-align: center;
             color: #f4d160;
-	    font-size: 14px;
-        }
-
-        footer p {
-            margin-bottom: 0;
-        }
-		
-
-        @media (max-width: 768px) {
-        
-    .content {
-        flex-direction: column; /* Stack columns on smaller screens */
-        padding: 1.5rem;
-        width: 150%; /* Increased width for better use of space */
-        max-width: 600px; /* Keep a reasonable max width for readability */
-    }
-
-
-            .contact-info,
-            .form-container {
-                padding: 0; /* Remove padding for smaller screens */
-                margin-bottom: 20px; /* Space between stacked items */
-            }
-            h2 {
-                font-size: 24px; /* Adjust heading size */
-            }
-			.social-media {
-            margin-top: 60px;
-			}
-			.form-container h2{
-			visibility: hidden;
-			}
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-
-
-    <!-- Navigation Section -->
     <header>
         <div class="logo">
-            <h1> <a href="index.html" style="text-decoration: none; color: #ffd400;"><span style="font-family:Blippo, fantasy;">𝔄ℌ𝔄𝔇'𝔰.</span><span style="font-size: 8px;"> &nbspTERRITORY.</span> </a></h1>
+            <h1><a href="index.html" style="text-decoration: none; color: #ffd400;">𝔄ℌ𝔄𝔇'𝔰.</a></h1>
         </div>
         <nav>
             <ul>
@@ -429,11 +238,42 @@
                 <li><a href="life-events.html">Life Events</a></li>
                 <li><a href="explores.html">Explores</a></li>
             </ul>
-            
             <a href="contact.html" class="glass-button">Contact</a>
             <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         </nav>
     </header>
+
+    <div class="container">
+        <div class="bg-image"></div>
+        <div class="content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p><strong>Phone:</strong> +8801540111693</p>
+                <p><strong>Email:</strong> ahad000555ex@gmail.com</p>
+                <p><strong>Address:</strong> Dhanmoni, Dhaka, BD</p>
+                <p><strong>Hometown:</strong> Chandpur, Bangladesh</p>
+            </div>
+            <div class="form-container">
+                <h2>Get in Touch</h2>
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+    </footer>
 
     <script>
         function toggleMenu() {
@@ -441,50 +281,5 @@
             navUl.classList.toggle('show');
         }
     </script>
-
-	
-<!-- Contact -->
-
-	<div class="container">
-		<div class="bg-image"></div>
-		<div class="content">
-			<div class="contact-info">
-				<h2>Contact Information</h2>
-				<p><strong>Phone:</strong><span style="color:#ffffff;"> +8801540111693 </span></p>
-				<p><strong>Email:</strong><span style="color:#ffffff;"> ahad000555ex@gmail.com</span></p>
-				<p><strong>Address:</strong><span style="color:#ffffff;"> Dhanmoni, Dhaka, BD</span></p>
-				<p><strong>Hometown:</strong><span style="color:#ffffff;"> Chandpur, Bangladesh</span></p>
-				<div class="social-media">
-					<h3>Follow Me</h3>
-					<a href="https://www.facebook.com/abd.ahad.001" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-					<a href="https://wa.me/+8801540111693" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-					<a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-					<a href="https://www.threads.net/@cal.ahad" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-				</div>
-			</div>
-			<div class="form-container">
-				<h2>Get in Touch</h2>
-				<form>
-					<div class="form-group">
-						<input type="text" placeholder="Your Name" required>
-					</div>
-					<div class="form-group">
-						<input type="email" placeholder="Your Email" required>
-					</div>
-					
-					<div class="form-group">
-						<textarea rows="5" placeholder="Your Message" required></textarea>
-					</div>
-					<button type="submit" class="submit-btn">Send Message</button>
-				</form>
-			</div>
-		</div>
-	</div>
-
-<!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
-    </footer>
-
 </body>
 </html>
