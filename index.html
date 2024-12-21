@@ -307,17 +307,7 @@
         }
 		
 		
-        /* Footer */
-        footer {
-            background-color: #0d1b2a;
-            padding: 2rem;
-            text-align: center;
-            color: #f4d160;
-        }
-
-        footer p {
-            margin-bottom: 0;
-        }
+        
 
         /* Home Section Animation */
         @keyframes fadeInLeft {
@@ -479,6 +469,36 @@
         to {
             opacity: 1;
             transform: translateY(0); /* End at normal position */
+        }
+    }
+	
+	
+	
+	/* Footer */
+    footer {
+        background-color: #0d1b2a;
+        padding: 2rem;
+        text-align: center;
+        color: #f4d160;
+        height: auto; /* Ensures footer content fits well */
+        min-height: 100px; /* Set minimum height to prevent excessive space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer p {
+        margin-bottom: 0;
+    }
+
+    /* Mobile Design - Footer Height */
+    @media (max-width: 768px) {
+        footer {
+            padding: 1.5rem;
+            height: 80px; /* Fixed height for the footer on mobile */
+            min-height: 80px; /* Ensure the footer has a minimum height */
+            text-align: center;
+            font-size: 0.9rem; /* Adjust font size for mobile */
         }
     }
 	</style>
