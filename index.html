@@ -358,13 +358,36 @@ section {
 
 
     /* Mobile Styles */
-    @media (max-width: 768px) {
+    /* Mobile Styles */
+@media (max-width: 768px) {
     .education-cards {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Increase min width of the cards */
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased the minimum width of the cards */
+        gap: 1.5rem; /* Reduced gap between cards */
+        padding: 1rem;
     }
 
     .edu-item {
-        margin: 1rem; /* Add spacing between the cards */
+        padding: 1.2rem; /* Slightly increased padding for more space */
+    }
+
+    .edu-item img {
+        height: 200px; /* Adjusted image size for a bit more visual appeal */
+    }
+
+    .edu-item h3 {
+        font-size: 1.3rem; /* Slightly larger font size for headings */
+    }
+
+    .edu-item .institute {
+        font-size: 13px; /* Slightly larger font for better readability */
+    }
+
+    .details .description {
+        font-size: 0.9rem; /* Increased font size for better readability */
+    }
+
+    .detail-item {
+        font-size: 1rem; /* Adjusted font size of details for better visibility */
     }
 }
 
