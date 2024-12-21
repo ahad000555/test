@@ -23,6 +23,7 @@
         }
 
         /* Navigation Styles */
+        /* Navigation Styles */
         header {
             display: flex;
             justify-content: space-between;
@@ -240,180 +241,214 @@
         }
 
 
-
-        
-
-
-/* Education Section */
-
-section {
+	
+		
+		/* Section Titles */
+        section {
             padding: 5rem 3rem;
             position: relative;
         }
 
-#education {
-    background-color: #f9f9f9; /* Light background for the section */
-    padding-bottom: 3rem;
+        section h2 {
+            text-align: center;
+            font-size: 30px !important; /* Force the font-size change */
+			margin-top: 3rem !important;
+            margin-bottom: 3rem;
+            color: #f4d160;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #f4d160;
+        }
+		
+		
+		
+/* Work Experience Section */
+#experience {
+    background-color: #0d1b2a;
+    padding: 5rem 3rem;
+    color: #fff;
 }
 
-#education h2 {
-    font-size: 30px !important; /* Force the font-size change */
-    margin-top: 3rem !important;
+#experience h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 5rem;
+    color: #f4d160;
 }
 
-
-.education-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.experience-cards {
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    padding: 2rem 2rem;
 }
 
-.edu-item {
-    background-color: #ffffff; /* Bright white background for the cards */
-    border-radius: 15px;
-    padding: 1.2rem;
+.exp-item {
+    background-color: #2b3a4e;  
+    border-radius: 10px;
+    padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-left: 5px solid #f4d160;
 }
 
-.edu-item img {
-    width: 100%;
-    height: 200px;
-    border-radius: 15px 15px 0 0;
-    object-fit: cover;
+.exp-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-.edu-item h3 {
-    color: #180161; /* Dark blue for the heading */
-    margin: 1rem 0;
-	margin-bottom: 13px;
-    font-size: 1.4rem;
+.exp-header {
+    color: #ffffff;
+    margin-bottom: 1rem;
 }
 
-.edu-item .institute {
-    color: #474747; /* Dark grey for the text */
-    font-weight: bold; /* Bold for emphasis */
-	font-size: 13px;
+
+/* Job Title Styling */
+.exp-header h3 {
+    font-size: 14px;
+    color: #f4d160;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.details {
-    margin-top: 3rem;
+/* Company Name Styling */
+.company-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #aad1e6; /* Light blue for company name */
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.company-logo {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+	margin-bottom: 1rem;
+}
+
+
+.exp-details {
+    margin-top: 1rem;
 }
 
 .detail-item {
     display: flex;
     align-items: center;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-left: 4px solid #f4d160; /* Left border for a premium look */
-    background-color: #fafafa; /* Slightly darker background for details */
-    border-radius: 5px; /* Rounded corners for the details */
-    transition: background-color 0.3s ease; /* Transition for hover effect */
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #e0e0e0;
 }
 
 .detail-item i {
-    font-size: 1.5rem; /* Icon size */
-    color: #f4d160; /* Icon color */
-    margin-right: 10px; /* Space between icon and text */
+    color: #f4d160;
+    font-size: 1rem;
+    margin-right: 10px;
 }
 
-.detail-text {
-    font-size: 1rem; /* Base font size for details */
-    color: #555555; /* Grey color for the details */
-}
-
-.detail-item:hover {
-    background-color: #f0e6b1; /* Light background change on hover */
-}
-
-.details .description {
-    color: #777777; /* Lighter grey for description text */
+.exp-content {
+    padding: 1rem;
+    border-top: 1px solid rgba(244, 209, 96, 0.5);
     margin-top: 1rem;
-    font-size: 0.9rem;
+	font-size: 14px;
 }
 
-.edu-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+.duration {
+	margin-top: 3rem;
+	margin-bottom: 1rem;
+    color: #ddd;
 }
-
-/* Adjust the heading style to match */
-#education h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #0d1b2a; /* Dark blue for heading */
-    position: relative;
+.subjects{
+	margin-bottom: 1rem;
+    color: #ddd;
 }
-
-#education h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background-color: #f4d160; /* Golden highlight under the heading */
-}
-
-
-    /* Mobile Styles */
-/* Mobile Styles */
-/* Mobile Styles */
-@media (max-width: 768px) {
-	#education h2 {
-        font-size: 1rem; /* Smaller font size for mobile */
-        margin-bottom: 3rem !important; /* Reduced margin for mobile */
-	margin-top: 1rem !important;
-    }
-
-    
-    .education-cards {
-        display: grid; /* Ensure it uses grid layout */
-        grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
-        gap: 1.5rem; /* Space between the cards */
-        padding: 1rem;
-        justify-items: center; /* Center the cards horizontally */
-    }
-
-    .edu-item {
-        padding: 1rem; /* Reduced padding for mobile */
-        width: 120%; /* Adjusted width, takes up 90% of the available space */
-        max-width: 500px; /* Increased max-width of the cards */
-    }
-
-    .edu-item img {
-        height: 180px; /* Adjust image size for mobile */
-        width: 100%; /* Ensure the image fills the width of the card */
-        object-fit: cover; /* Ensure the image doesn't stretch or distort */
-    }
-
-    .edu-item h3 {
-        font-size: 1.3rem; /* Smaller font size for mobile */
-    }
-
-    .edu-item .institute {
-        font-size: 13px; /* Smaller font size for mobile */
-    }
-
-    .details .description {
-        font-size: 0.8rem; /* Smaller font size for description */
-    }
-
-    .detail-item {
-        font-size: 0.9rem; /* Adjust font size of details */
-    }
-}
-
-
-
-
+.company-description {
 	
-        /* Footer */
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+
+.personal-description {
+    color: #bbb;
+}
+
+
+.exp-item:hover .personal-description {
+    color: #fff;
+}
+
+/* Hover effect for the details */
+.exp-item:hover .detail-item i {
+    color: #ffdd33;
+}
+
+
+
+.exp-button {
+    display: inline-block;
+    padding: 8px 27px;
+	margin-top: 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    color: #ffd400;
+    text-decoration: none;
+    background: transparent;/* Glassy background */
+    backdrop-filter: blur(8px); /* Blur effect */
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid #ffd400; /* Frosted glass border */
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-button:hover {
+    background-color: #ffd400; /* Soft golden color on hover */
+    color: #0d1b2a;
+    transform: translateY(0px);
+    
+}
+
+
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+	#experience h2 {
+        font-size: 1.5rem !important;/* Smaller font size for mobile */
+        margin-bottom: 3rem !important; /* Reduced margin for mobile */
+		margin-top: 1rem !important;
+    }
+    .exp-item {
+        padding: 1.5rem;
+    }
+
+    .company-logo {
+        width: 50px;
+    }
+
+    .exp-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .company-name {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Footer */
         footer {
             background-color: #0d1b2a;
             padding: 2rem;
@@ -424,19 +459,10 @@ section {
         footer p {
             margin-bottom: 0;
         }
-
-
-
-
-
-
-
-
-
-
-
-        
-    </style>
+		
+		
+		
+		</style>
 </head>
 
 <body>
@@ -466,112 +492,77 @@ section {
         }
     </script>
 
+
+	
+	
+<!-- Work Experience Section -->
+<section id="experience">
+    <h2>Work Experience</h2>
     
-
-
-<!-- Education Section -->
-<section id="education">
-    <h2>Education</h2>
-    <div class="education-cards">
-
-        <div class="edu-item">
-            <div class="edu-header">
-                <img src="university-image.jpg" alt="University Image">
-                <div class="degree-info">
-                    <h3>BSc(Engg.)</h3>
-                    <p class="institute">NITER, University of Dhaka</p>
-                </div>
+    <div class="experience-cards">
+        <div class="exp-item">
+            <div class="exp-header">
+                <img src="company-logo1.png" alt="Company Logo" class="company-logo">
+                <h3>Instructor</h3>
+                <p class="company-name">AUTHENTICA Academic Care</p>
             </div>
-            <div class="details">
-                <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="detail-text"><strong>Location:</strong> Dhaka, Bangladesh</span>
+            <div class="exp-details">
+                <div class="exp-content">
+					<p class="duration">
+						<strong style="color:#f9e6a8;"> Duration: </strong>Since 2023 
+					</p>
+					<p class="subjects">
+						<strong style="color:#f9e6a8;"> Tutoring Subjects: </strong>Physics, Chemistry, General Science
+					</p>
+                    <p class="company-description">
+                        <strong style="color:#f9e6a8;">About the Academy: </strong><br> Authentica is a well-established coaching center in Hazaribagh, providing quality education for the past 19 years. It offers classes for students from 4th to 12th grade, with specialized coaching in Science, Business Studies, and Humanities. Known for its experienced teachers and personalized attention, Authentica has helped countless students achieve excellent academic results. The center is highly respected in the community for its student-focused approach and commitment to success. Parents trust Authentica to provide the right guidance for their children's educational growth. With a strong reputation in the area, it continues to be a leading choice for academic coaching.
+                        
+                    </p>
+                    <p class="personal-description">
+                        
+                        As an instructor, I implemented effective teaching strategies, designed course materials, and mentored students to promote learning success.
+                    </p>
+					<a href="" class="exp-button">More</a>
                 </div>
-                <div class="detail-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span class="detail-text"><strong>Year:</strong> 2023</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-book"></i>
-                    <span class="detail-text"><strong>Subject:</strong> Computer Science</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="detail-text"><strong>Result:</strong> CGPA 3.4</span>
-                </div>
-                <div class="description">Currently pursuing my degree, focusing on web development and Networking.</div>
             </div>
         </div>
 
-        <div class="edu-item">
-            <div class="edu-header">
-                <img src="college-image.jpg" alt="College Image">
-                <div class="degree-info">
-                    <h3>HSC</h3>
-                    <p class="institute"> Birshreshtha Munshi Abdur Rouf Public College</p>
-                </div>
+        <div class="exp-item">
+            <div class="exp-header">
+                <img src="company-logo2.png" alt="Company Logo" class="company-logo">
+                <h3>Instructor</h3>
+                <p class="company-name">STUDY PLUS Academic Care</p>
             </div>
-            <div class="details">
-                <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="detail-text"><strong>Location:</strong> Dhaka, Bangladesh</span>
+            <div class="exp-details">
+                
+                <div class="exp-content">
+					<p class="duration">
+						<strong style="color:#f9e6a8;"> Duration: </strong>Since 2023 
+					</p>
+					<p class="subjects">
+						<strong style="color:#f9e6a8;"> Tutoring Subjects: </strong>Physics, General Science
+					</p>
+                    <p class="company-description">
+                        <strong style="color:#f9e6a8;">About the Academy: </strong><br>Study Plus is a renowned coaching center located in Dhanmondi, Road No. 15, known for its high-quality education and student success. It offers comprehensive support to students across a range of subjects, helping them excel academically. With a reputation for dedicated teaching and personalized attention, Study Plus has become a trusted name in the community. The center focuses on fostering a positive learning environment that encourages students to reach their full potential. Over the years, Study Plus has earned the respect of both students and parents for its commitment to excellence. It remains a top choice for academic coaching in Dhanmondi.
+                        
+                    </p>
+                    <p class="personal-description">
+                        
+                        I have been actively supporting students to achieve academic goals, focusing on understanding core concepts and improving exam performance.
+                    </p>
+					<a href="" class="exp-button">More</a>
                 </div>
-                <div class="detail-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span class="detail-text"><strong>Year:</strong> 2022</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-book"></i>
-                    <span class="detail-text"><strong>Subject:</strong> Science</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="detail-text"><strong>Result:</strong> GPA 5.00</span>
-                </div>
-                <div class="description">Completed my HSC with a strong foundation in mathematics and physics.</div>
-            </div>
-        </div>
-
-        <div class="edu-item">
-            <div class="edu-header">
-                <img src="school-image.jpg" alt="School Image">
-                <div class="degree-info">
-                    <h3>SSC</h3>
-                    <p class="institute">Gani Model High School</p>
-                </div>
-            </div>
-            <div class="details">
-                <div class="detail-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="detail-text"><strong>Location:</strong> Chandpur, Bangladesh</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span class="detail-text"><strong>Year:</strong> 2020</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-book"></i>
-                    <span class="detail-text"><strong>Subject:</strong> Science</span>
-                </div>
-                <div class="detail-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="detail-text"><strong>Result:</strong> GPA 5.00</span>
-                </div>
-                <div class="description">Graduated with excellent performance, active in extracurricular activities.</div>
             </div>
         </div>
-
     </div>
 </section>
-    
 
 
 
-
-    <!-- Footer -->
-		<footer>
-			<p>&copy; 2024 Ahad. All Rights Reserved. </p>
-		</footer>
+<!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
