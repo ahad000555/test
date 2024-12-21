@@ -429,6 +429,13 @@
         margin-bottom: 3rem !important; /* Reduced margin for mobile */
 		margin-top: 1rem !important;
     }
+	.experience-cards {
+        display: grid; /* Ensure it uses grid layout */
+        grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
+        gap: 1.5rem; /* Space between the cards */
+        padding: 1rem;
+        justify-items: center; /* Center the cards horizontally */
+    }
     .exp-item {
         padding: 1.5rem;
 		width: 120%; /* Adjusted width, takes up 90% of the available space */
