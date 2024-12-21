@@ -359,23 +359,26 @@ section {
 
     /* Mobile Styles */
 /* Mobile Styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
     .education-cards {
-        display: grid; /* Use grid for layout */
-        grid-template-columns: 1fr; /* Stack cards vertically on mobile */
-        gap: 1.5rem; /* Reduced gap between cards */
+        display: grid; /* Ensure it uses grid layout */
+        grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
+        gap: 1.5rem; /* Space between the cards */
         padding: 1rem;
-        justify-items: center; /* Centers the cards horizontally */
+        justify-items: center; /* Center the cards horizontally */
     }
 
     .edu-item {
         padding: 1rem; /* Reduced padding for mobile */
-        width: 100%; /* Ensure each card takes full width */
-        max-width: 600px; /* Increased width of each card */
+        width: 90%; /* Adjusted width, takes up 90% of the available space */
+        max-width: 600px; /* Increased max-width of the cards */
     }
 
     .edu-item img {
         height: 180px; /* Adjust image size for mobile */
+        width: 100%; /* Ensure the image fills the width of the card */
+        object-fit: cover; /* Ensure the image doesn't stretch or distort */
     }
 
     .edu-item h3 {
