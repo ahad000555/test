@@ -368,10 +368,30 @@
             background-color: #e1c15c; /* Darker Gold */
             transform: translateY(-2px); /* Slight lift effect */
         }
+		
+		
+		
+/* Footer */
+        footer {
+            background-color: #0d1b2a;
+            padding: 2rem;
+            text-align: center;
+            color: #f4d160;
+	    font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+		
 
         @media (max-width: 768px) {
             .content {
                 flex-direction: column; /* Stack columns on smaller screens */
+				
+				padding: 1.5rem;
+				width: 130%; /* Adjusted width, takes up 90% of the available space */
+				max-width: 500px; /* Increased max-width of the cards */
             }
             .contact-info,
             .form-container {
