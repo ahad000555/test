@@ -359,31 +359,15 @@ section {
 
     /* Mobile Styles */
     @media (max-width: 768px) {
-        .education-cards {
-            grid-template-columns: 1fr; /* Stack cards in a single column */
-            padding: 1rem;
-        }
-
-        .edu-item {
-            padding: 1rem;
-        }
-
-        .edu-item h3 {
-            font-size: 1rem; /* Smaller font for card titles */
-        }
-
-        .edu-item .institute {
-            font-size: 11px; /* Smaller font for institute */
-        }
-
-        .detail-text {
-            font-size: 0.85rem; /* Smaller font size for details */
-        }
-
-        .details .description {
-            font-size: 0.8rem; /* Smaller font size for descriptions */
-        }
+    .education-cards {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Increase the min width of cards */
     }
+
+    .edu-item {
+        margin: 1rem; /* Add some spacing between the cards */
+    }
+}
+
 
 
 	
