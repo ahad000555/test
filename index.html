@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Your Name | Premium Portfolio</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #0d1b2a;
+		
+		body {
+            
+             background-color: #0d1b2a;
             color: #fff;
+            overflow-x: hidden;
         }
-
-        /* Navigation Styles */
+		
+		
+		
+		
+		
+		        /* Navigation Styles */
         /* Navigation Styles */
         header {
             display: flex;
@@ -242,252 +244,155 @@
         }
 
 
-	
 		
-		/* Section Titles */
-        section {
-            padding: 5rem 3rem;
+		
+		
+		
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             position: relative;
+            padding: 50px;
+            text-align: left;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+			margin-top: 100px;
         }
 
-        section h2 {
-            text-align: center;
-            font-size: 30px !important; /* Force the font-size change */
-			margin-top: 3rem !important;
-            margin-bottom: 3rem;
-            color: #f4d160;
-            position: relative;
-        }
-
-        section h2::after {
-            content: '';
+        .bg-image {
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background-color: #f4d160;
-        }
-		
-		
-		
-/* Work Experience Section */
-#experience {
-    background-color: #0d1b2a;
-    padding: 5rem 3rem;
-    color: #fff;
-}
-
-#experience h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 5rem;
-    color: #f4d160;
-}
-
-.experience-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.exp-item {
-    background-color: #2b3a4e;  
-    border-radius: 10px;
-    padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    border-left: 5px solid #f4d160;
-}
-
-.exp-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.exp-header {
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
-
-
-/* Job Title Styling */
-.exp-header h3 {
-    font-size: 14px;
-    color: #f4d160;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Company Name Styling */
-.company-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #aad1e6; /* Light blue for company name */
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-
-.company-logo {
-    width: 80px;
-    height: auto;
-    border-radius: 10px;
-	margin-bottom: 1rem;
-}
-
-
-.exp-details {
-    margin-top: 1rem;
-}
-
-.detail-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
-    color: #e0e0e0;
-}
-
-.detail-item i {
-    color: #f4d160;
-    font-size: 1rem;
-    margin-right: 10px;
-}
-
-.exp-content {
-    padding: 1rem;
-    border-top: 1px solid rgba(244, 209, 96, 0.5);
-    margin-top: 1rem;
-	font-size: 14px;
-}
-
-.duration {
-	margin-top: 3rem;
-	margin-bottom: 1rem;
-    color: #ddd;
-}
-.subjects{
-	margin-bottom: 1rem;
-    color: #ddd;
-}
-.company-description {
-	
-    margin-bottom: 1rem;
-    color: #ddd;
-}
-
-.personal-description {
-    color: #bbb;
-}
-
-
-.exp-item:hover .personal-description {
-    color: #fff;
-}
-
-/* Hover effect for the details */
-.exp-item:hover .detail-item i {
-    color: #ffdd33;
-}
-
-
-
-.exp-button {
-    display: inline-block;
-    padding: 8px 27px;
-	margin-top: 30px;
-    font-size: 14px;
-    border-radius: 10px;
-    color: #ffd400;
-    text-decoration: none;
-    background: transparent;/* Glassy background */
-    backdrop-filter: blur(8px); /* Blur effect */
-    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    border: 1px solid #ffd400; /* Frosted glass border */
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.exp-button:hover {
-    background-color: #ffd400; /* Soft golden color on hover */
-    color: #0d1b2a;
-    transform: translateY(0px);
-    
-}
-
-
-
-
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-	#experience {
-    
-	background-color: #2b3a4e;
-	}
-	#experience h2 {
-        font-size: 1.5rem !important;/* Smaller font size for mobile */
-        margin-bottom: 3rem !important; /* Reduced margin for mobile */
-		margin-top: 1rem !important;
-    }
-	.experience-cards {
-        display: grid; /* Ensure it uses grid layout */
-        grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
-        gap: 1.5rem; /* Space between the cards */
-        padding: 1rem;
-        justify-items: center; /* Center the cards horizontally */
-    }
-    .exp-item {
-        padding: 1.5rem;
-		width: 130%; /* Adjusted width, takes up 90% of the available space */
-        max-width: 500px; /* Increased max-width of the cards */
-		background-color: #0d1b2a;
-    }
-
-    .company-logo {
-        width: 65px;
-    }
-
-    .exp-header h3 {
-        font-size: 0.9rem;
-    }
-
-    .company-name {
-        font-size: 1.1rem;
-    }
-	.exp-content {
-    padding: 0rem;
-	}
-	.company-description span{
-	font-size: 12.5px;
-	}
-}
-
-
-
-/* Footer */
-        footer {
-            background-color: #0d1b2a;
-            padding: 2rem;
-            text-align: center;
-            color: #f4d160;
-	    font-size: 14px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('your-image.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(5px);
+            z-index: 1;
         }
 
-        footer p {
-            margin-bottom: 0;
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            background-color: rgba(13, 27, 42, 0.85); /* Slightly transparent Dark Blue */
+            border-radius: 8px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 40px;
+			
         }
-		
-		
-		
-		</style>
+
+        .contact-info {
+            flex: 1;
+            padding-right: 20px; /* Space between columns */
+        }
+
+        .contact-info h2 {
+            font-size: 25px;
+            color: #f4d160; /* Gold */
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+			font-size: 13px;
+            margin-bottom: 15px;
+            color: #aad1e6; /* Light Blue */
+        }
+
+        .social-media {
+            margin-top: 230px;
+        }
+		.social-media h3{
+		margin-bottom: 10px;
+		}
+
+        .social-media a {
+            color: #f4d160; /* Gold */
+            margin-right: 15px;
+            font-size: 22px;
+            transition: color 0.3s;
+        }
+
+        .social-media a:hover {
+            color: #e1c15c; /* Darker Gold */
+        }
+
+        .form-container {
+            flex: 1;
+            padding-left: 20px; /* Space between columns */
+        }
+		.form-container h2{
+		font-size: px;
+		margin-bottom: 5px;
+		}
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1f2a38; /* Darker Background for inputs */
+            color: #ffffff;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border: 2px solid #f4d160; /* Gold */
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f4d160; /* Gold */
+            color: #0d1b2a; /* Dark Blue for text */
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #e1c15c; /* Darker Gold */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column; /* Stack columns on smaller screens */
+            }
+            .contact-info,
+            .form-container {
+                padding: 0; /* Remove padding for smaller screens */
+                margin-bottom: 20px; /* Space between stacked items */
+            }
+            h2 {
+                font-size: 24px; /* Adjust heading size */
+            }
+			.social-media {
+            margin-top: 60px;
+			}
+			.form-container h2{
+			visibility: hidden;
+			}
+        }
+    </style>
 </head>
-
 <body>
+
+
     <!-- Navigation Section -->
     <header>
         <div class="logo">
@@ -514,79 +419,49 @@
         }
     </script>
 
-
 	
-	
-<!-- Work Experience Section -->
-<section id="experience">
-    <h2>Work Experience</h2>
-    
-    <div class="experience-cards">
-        <div class="exp-item">
-            <div class="exp-header">
-                <img src="company-logo1.png" alt="Company Logo" class="company-logo">
-                <h3>Instructor</h3>
-                <p class="company-name">AUTHENTICA Academic Care</p>
-            </div>
-            <div class="exp-details">
-                <div class="exp-content">
-					<p class="duration">
-						<i class="fas fa-map-marker-alt" style="font-size: 1.2rem; color: #4caf50;"></i><span style="color:white;font-family: Courier, monospace;"> Hajaribugh,Dhaka,Bangladesh.<span> <br><br><br>
-						<strong style="color:#f9e6a8;"> Duration: </strong>Since 2023 
-					</p>
-					<p class="subjects">
-						<strong style="color:#f9e6a8;"> Tutoring Subjects: </strong>Physics, Chemistry, General Science
-					</p>
-                    <p class="company-description">
-                        <strong style="color:#f9e6a8;">About the Academy: </strong><br> <span> Authentica is a trusted coaching center in Hazaribagh, offering quality education for 19 years. It provides classes for students in grades 4-12, specializing in Science, Business Studies, and Humanities. Known for experienced teachers and personalized attention, Authentica has helped numerous students achieve excellent results. The center is highly respected for its student-focused approach, making it a top choice for academic coaching in the community.</span>
-                        
-                    </p>
-                    <p class="personal-description">
-                        
-                        As an instructor, I implemented effective teaching strategies, designed course materials, and mentored students to promote learning success.
-                    </p>
-					<a href="" class="exp-button">More</a>
-                </div>
-            </div>
-        </div>
+<!-- Contact -->
 
-        <div class="exp-item">
-            <div class="exp-header">
-                <img src="company-logo2.png" alt="Company Logo" class="company-logo">
-                <h3>Instructor</h3>
-                <p class="company-name">STUDY PLUS Academic Care</p>
-            </div>
-            <div class="exp-details">
-                
-                <div class="exp-content">
-					<p class="duration">
-						<i class="fas fa-map-marker-alt" style="font-size: 1.2rem; color: #4caf50;"></i><span style="color:white;font-family: Courier, monospace;"> Dhanmondi,Dhaka,Bangladesh.<span> <br><br><br>
-						<strong style="color:#f9e6a8;"> Duration: </strong>Since 2023 
-					</p>
-					<p class="subjects">
-						<strong style="color:#f9e6a8;"> Tutoring Subjects: </strong>Physics, General Science
-					</p>
-                    <p class="company-description">
-                        <strong style="color:#f9e6a8;">About the Academy: </strong><br> <span>Study Plus is a renowned coaching center located in Dhanmondi, Road No. 15, known for its high-quality education and student success. It offers comprehensive support to students across a range of subjects, helping them excel academically. With a reputation for dedicated teaching and personalized attention, Study Plus has become a trusted name in the community. The center focuses on fostering a positive learning environment that encourages students to reach their full potential. Over the years, Study Plus has earned the respect of both students and parents for its commitment to excellence. It remains a top choice for academic coaching in Dhanmondi. </span>
-                        
-                    </p>
-                    <p class="personal-description">
-                        
-                        I have been actively supporting students to achieve academic goals, focusing on understanding core concepts and improving exam performance.
-                    </p>
-					<a href="" class="exp-button">More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+	<div class="container">
+		<div class="bg-image"></div>
+		<div class="content">
+			<div class="contact-info">
+				<h2>Contact Information</h2>
+				<p><strong>Phone:</strong><span style="color:#ffffff;"> +8801540111693 </span></p>
+				<p><strong>Email:</strong><span style="color:#ffffff;"> ahad000555ex@gmail.com</span></p>
+				<p><strong>Address:</strong><span style="color:#ffffff;"> Dhanmoni, Dhaka, BD</span></p>
+				<p><strong>Hometown:</strong><span style="color:#ffffff;"> Chandpur, Bangladesh</span></p>
+				<div class="social-media">
+					<h3>Follow Me</h3>
+					<a href="https://www.facebook.com/abd.ahad.001" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+					<a href="https://wa.me/+8801540111693" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+					<a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.threads.net/@cal.ahad" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+				</div>
+			</div>
+			<div class="form-container">
+				<h2>Get in Touch</h2>
+				<form>
+					<div class="form-group">
+						<input type="text" placeholder="Your Name" required>
+					</div>
+					<div class="form-group">
+						<input type="email" placeholder="Your Email" required>
+					</div>
+					
+					<div class="form-group">
+						<textarea rows="5" placeholder="Your Message" required></textarea>
+					</div>
+					<button type="submit" class="submit-btn">Send Message</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 <!-- Footer -->
     <footer>
         <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
     </footer>
-</body>
 
+</body>
 </html>
