@@ -256,6 +256,10 @@ section {
     padding-bottom: 3rem;
 }
 
+#education h2 {
+    font-size: 30px !important; /* Force the font-size change */
+    margin-top: 3rem !important;
+}
 
 
 .education-cards {
@@ -361,6 +365,13 @@ section {
 /* Mobile Styles */
 /* Mobile Styles */
 @media (max-width: 768px) {
+	#education h2 {
+        font-size: 1rem; /* Smaller font size for mobile */
+        margin-bottom: 2rem; /* Reduced margin for mobile */
+		margin-top: 2rem;
+    }
+
+    
     .education-cards {
         display: grid; /* Ensure it uses grid layout */
         grid-template-columns: 1fr; /* Stack the cards vertically on small screens */
@@ -460,7 +471,7 @@ section {
 
 <!-- Education Section -->
 <section id="education">
-    <h2 style="font-size: 38px;">Education</h2>
+    <h2>Education</h2>
     <div class="education-cards">
 
         <div class="edu-item">
