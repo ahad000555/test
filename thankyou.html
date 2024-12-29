@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: #f4f9ff; /* Light Blue Background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .thank-you-container {
+            background: #ffffff; /* White Background */
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .thank-you-container h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2d89ef; /* Bright Blue */
+            margin-bottom: 20px;
+        }
+
+        .thank-you-container p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .thank-you-container .btn {
+            display: inline-block;
+            background: #2d89ef; /* Bright Blue */
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(45, 137, 239, 0.3);
+        }
+
+        .thank-you-container .btn:hover {
+            background: #256cbb; /* Slightly Darker Blue */
+            box-shadow: 0 6px 15px rgba(37, 108, 187, 0.4);
+        }
+
+        .thank-you-container .icon {
+            font-size: 3rem;
+            color: #2d89ef; /* Bright Blue */
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .thank-you-container .profile {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: #ddd;
+            overflow: hidden;
+        }
+
+        .thank-you-container .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .thank-you-container .decorative-circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(45, 137, 239, 0.1);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .thank-you-container .decorative-circle.one {
+            top: -30px;
+            right: -50px;
+        }
+
+        .thank-you-container .decorative-circle.two {
+            bottom: -30px;
+            left: -50px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #2d89ef;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="profile">
+            <img src="Profile.jpg" alt="Your Profile">
+        </div>
+        <div class="icon">&#10004;</div> <!-- Checkmark icon -->
+        <h1>Thank You!</h1>
+        <p>Your message has been successfully sent. We appreciate your feedback and will get back to you shortly!</p>
+        <a href="index.html" class="btn">Go Back to Home</a>
+        <div class="decorative-circle one"></div>
+        <div class="decorative-circle two"></div>
+    </div>
+</body>
+</html>
