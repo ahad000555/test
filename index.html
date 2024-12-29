@@ -24,7 +24,7 @@
             min-height: 100vh;
             padding: 2rem 1rem;
             text-align: center;
-            position: relative;
+            flex-direction: column;
         }
 
         html {
@@ -71,7 +71,7 @@
 
         /* Contact Details Section */
         .contact-details {
-            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
+            margin: 2.5rem 0 2.5rem;
         }
 
         .contact-header {
@@ -226,98 +226,105 @@
             background: #4caf50;
         }
 
-        /* Chat Bubble */
-        .chat-bubble-container {
+        /* Floating Chat Bubble */
+        .chat-bubble {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .chat-bubble {
             background: #4caf50;
             color: white;
             padding: 15px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 24px;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 100;
+            transition: all 0.3s ease-in-out;
         }
 
         .chat-bubble:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         .chat-arrow {
+            position: absolute;
+            bottom: 35px;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #4caf50;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .chat-text {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: #4caf50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: none;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .chat-bubble:hover .chat-text {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            border-top: 3px solid #e94560;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer .social-footer {
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin-top: 5px;
-            color: #fff;
-            font-size: 0.9rem;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .chat-arrow span {
-            margin-left: 8px;
-            font-size: 0.9rem;
+        footer .social-footer .social-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            box-shadow: none;
         }
 
-        /* Responsive Design */
+        footer .social-footer .social-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #b1b1b1;
+        }
+
+        /* Responsive Design for Footer */
         @media (max-width: 600px) {
-            h1 {
-                font-size: 1.6rem;
+            footer {
+                padding: 1.5rem;
             }
 
-            p {
-                font-size: 0.8rem;
-                line-height: 1.5;
-                padding: 0 1rem;
+            footer p {
+                font-size: 0.75rem;
             }
 
-            .action-buttons {
-                flex-direction: column;
+            footer .social-footer {
                 gap: 1rem;
-            }
-
-            .button {
-                font-size: 1rem;
-                width: 100%;
-            }
-
-            .social-section {
-                gap: 1rem;
-            }
-
-            .social-header {
-                font-size: 1rem;
-            }
-
-            .social-button {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-
-            .contact-header {
-                visibility: hidden;
-            }
-
-            .contact-item {
-                padding: 0.8rem 1rem;
-            }
-
-            .chat-arrow span {
-                display: none;
             }
         }
     </style>
@@ -387,12 +394,33 @@
         </div>
     </div>
 
-    <!-- Chat Bubble -->
-    <div class="chat-bubble-container">
-        <div class="chat-bubble">
-            <i class="fas fa-comment-alt"></i>
-        </div>
-
+    <!-- Floating Chat Bubble -->
+    <div class="chat-bubble">
+        <i class="fas fa-comment"></i>
+        <div class="chat-arrow"></div>
+        <div class="chat-text">Chat here</div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-footer">
+            <a href="https://www.facebook.com/abd.ahad.001" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="ahad-in.html" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+    </footer>
 </body>
 </html>
