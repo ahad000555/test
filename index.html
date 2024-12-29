@@ -225,54 +225,57 @@
             background: #4caf50;
         }
 
-        /* Chat Bubble */
+        /* Floating Chat Bubble */
         .chat-bubble {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25d366;
-            color: #fff;
+            background-color: #4caf50;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            padding: 15px;
-            font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 100;
             cursor: pointer;
         }
 
         .chat-bubble:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .chat-message {
+        .chat-arrow {
             position: absolute;
-            bottom: 60px;
-            right: 80px;
-            background-color: #25d366;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 14px;
-            display: none;
-            white-space: nowrap;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: bounce 1s infinite;
         }
 
-        .chat-bubble:hover + .chat-message {
-            display: block;
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
-        .chat-message:after {
-            content: '';
+        .chat-text {
+            font-size: 0.8rem;
+            color: #fff;
             position: absolute;
-            bottom: -10px;
-            right: 10px;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #25d366;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 1.5s infinite;
         }
 
         /* Responsive Design */
@@ -300,7 +303,6 @@
             .social-section {
                 gap: 1rem;
             }
-
             .social-header {
                 font-size: 1rem;
             }
@@ -317,11 +319,6 @@
 
             .contact-item {
                 padding: 0.8rem 1rem;
-            }
-
-            .chat-message {
-                right: 50px;
-                bottom: 70px;
             }
         }
     </style>
@@ -349,10 +346,10 @@
                     <i class="fas fa-phone-alt"></i>
                     <span>+8801720386495</span>
                 </div>
-				<div class="contact-item">
-					<i class="fab fa-whatsapp"></i>
-					<span>+8801540111693 (WhatsApp)</span>
-				</div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+8801540111693 (WhatsApp)</span>
+                </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>ahad000555ex@gmail.com</span>
@@ -373,7 +370,7 @@
             <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
@@ -395,9 +392,8 @@
     <!-- Chat Bubble -->
     <div class="chat-bubble">
         <i class="fas fa-comment"></i>
-    </div>
-    <div class="chat-message">
-        Chat here
+        <div class="chat-text">Chat here</div>
+        <div class="chat-arrow">▼</div>
     </div>
 </body>
 </html>
