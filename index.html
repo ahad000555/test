@@ -70,7 +70,7 @@
 
         /* Contact Details Section */
         .contact-details {
-            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
+            margin: 2.5rem 0 2.5rem;
         }
 
         .contact-header {
@@ -225,57 +225,57 @@
             background: #4caf50;
         }
 
-        /* Floating Chat Bubble */
-        .chat-bubble {
+        /* Floating Chat Icon */
+        .chat-icon {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #4caf50;
+            bottom: 30px;
+            right: 30px;
             width: 60px;
             height: 60px;
+            background-color: #25d366;
+            color: white;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 2rem;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-            z-index: 100;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
             cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .chat-bubble:hover {
+        .chat-icon:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .chat-arrow {
+        .chat-message {
             position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1rem;
-            color: #fff;
-            animation: bounce 1s infinite;
+            bottom: 90px;
+            right: 0;
+            background-color: #4caf50;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: white;
+            display: none;
+            animation: bubbleAnimation 1.5s infinite;
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
+        .chat-message.show {
+            display: block;
+        }
+
+        @keyframes bubbleAnimation {
+            0% {
+                bottom: 90px;
             }
             50% {
-                transform: translateY(-10px);
+                bottom: 100px;
             }
-        }
-
-        .chat-text {
-            font-size: 0.8rem;
-            color: #fff;
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 1.5s infinite;
+            100% {
+                bottom: 90px;
+            }
         }
 
         /* Responsive Design */
@@ -303,6 +303,7 @@
             .social-section {
                 gap: 1rem;
             }
+
             .social-header {
                 font-size: 1rem;
             }
@@ -379,7 +380,6 @@
             <a href="ahad-in.html" target="_blank" class="social-button linkedin">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            
             <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -389,11 +389,12 @@
         </div>
     </div>
 
-    <!-- Chat Bubble -->
-    <div class="chat-bubble">
-        <i class="fas fa-comment"></i>
-        <div class="chat-text">Chat here</div>
-        <div class="chat-arrow">▼</div>
+    <!-- Floating Chat Icon with Message -->
+    <div class="chat-icon" onclick="window.location.href='https://wa.me/+8801540111693'">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+    <div class="chat-message show">
+        <span>Chat here</span>
     </div>
 </body>
 </html>
