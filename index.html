@@ -70,7 +70,7 @@
 
         /* Contact Details Section */
         .contact-details {
-            margin: 2.5rem 0 2.5rem;
+            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
         }
 
         .contact-header {
@@ -225,56 +225,68 @@
             background: #4caf50;
         }
 
-        /* Floating Chat Icon */
+        /* Chat Icon Section */
         .chat-icon {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: #25d366;
-            color: white;
+            background: #0078d4;
             border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1.6rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-            font-size: 1.5rem;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .chat-icon:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
+        /* Floating Bubble Message */
         .chat-message {
-            position: absolute;
+            position: fixed;
             bottom: 90px;
-            right: 0;
-            background-color: #4caf50;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: white;
-            display: none;
-            animation: bubbleAnimation 1.5s infinite;
+            right: 80px;
+            background-color: #0078d4;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: float 2s ease-in-out infinite;
         }
 
-        .chat-message.show {
-            display: block;
+        .chat-message:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #0078d4;
+            margin-left: 10px;
         }
 
-        @keyframes bubbleAnimation {
+        @keyframes float {
             0% {
-                bottom: 90px;
+                opacity: 0;
+                transform: translateY(20px);
             }
+
             50% {
-                bottom: 100px;
+                opacity: 1;
+                transform: translateY(-10px);
             }
+
             100% {
-                bottom: 90px;
+                opacity: 0;
+                transform: translateY(20px);
             }
         }
 
@@ -303,9 +315,8 @@
             .social-section {
                 gap: 1rem;
             }
-
             .social-header {
-                font-size: 1rem;
+            font-size: 1rem;
             }
 
             .social-button {
@@ -347,10 +358,10 @@
                     <i class="fas fa-phone-alt"></i>
                     <span>+8801720386495</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+8801540111693 (WhatsApp)</span>
-                </div>
+				<div class="contact-item">
+					<i class="fab fa-whatsapp"></i>
+					<span>+8801540111693 (WhatsApp)</span>
+				</div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>ahad000555ex@gmail.com</span>
@@ -371,7 +382,7 @@
             <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
@@ -380,6 +391,7 @@
             <a href="ahad-in.html" target="_blank" class="social-button linkedin">
                 <i class="fab fa-linkedin-in"></i>
             </a>
+            
             <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -389,11 +401,13 @@
         </div>
     </div>
 
-    <!-- Floating Chat Icon with Message -->
-    <div class="chat-icon" onclick="window.location.href='https://wa.me/+8801540111693'">
-        <i class="fab fa-whatsapp"></i>
+    <!-- Chat Icon -->
+    <div class="chat-icon" onclick="alert('Chat Feature Coming Soon!')">
+        <i class="fas fa-comment-dots"></i>
     </div>
-    <div class="chat-message show">
+
+    <!-- Floating Message -->
+    <div class="chat-message">
         <span>Chat here</span>
     </div>
 </body>
