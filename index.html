@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <style>
+	
+	/* Global Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
-		
-		body {
-            
-             background-color: #0d1b2a;
-            color: #fff;
-            overflow-x: hidden;
         }
-		
-		
-		
-		
-		
-		        /* Navigation Styles */
+
+        body {
+            background-color: #0d1b2a;
+            color: #fff;
+        }
+
         /* Navigation Styles */
         header {
             display: flex;
@@ -242,184 +236,20 @@
                 margin-right: 20px;
             }
         }
-
-
-		
-		
-		
-		
-
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            position: relative;
-            padding: 50px;
-            text-align: left;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-			margin-top: 100px;
-        }
-
-        .bg-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('your-photo1.jpg') no-repeat center center;
-            background-size: cover;
-            filter: blur(5px);
-            z-index: 1;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            width: 100%;
-            max-width: 1200px;
-            background-color: rgba(13, 27, 42, 0.85); /* Slightly transparent Dark Blue */
-            border-radius: 8px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-            padding: 40px;
-			
-        }
-
-        .contact-info {
-            flex: 1;
-            padding-right: 20px; /* Space between columns */
-        }
-
-        .contact-info h2 {
-            font-size: 25px;
-            color: #f4d160; /* Gold */
-            margin-bottom: 10px;
-        }
-
-        .contact-info p {
-			font-size: 13px;
-            margin-bottom: 15px;
-            color: #aad1e6; /* Light Blue */
-        }
-
-        .social-media {
-            margin-top: 230px;
-        }
-		.social-media h3{
-		margin-bottom: 10px;
-		}
-
-        .social-media a {
-            color: #f4d160; /* Gold */
-            margin-right: 15px;
-            font-size: 22px;
-            transition: color 0.3s;
-        }
-
-        .social-media a:hover {
-            color: #e1c15c; /* Darker Gold */
-        }
-
-        .form-container {
-            flex: 1;
-            padding-left: 20px; /* Space between columns */
-        }
-		.form-container h2{
-		font-size: px;
-		margin-bottom: 5px;
-		}
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #151D27; /* Darker Background for inputs */
-            color: #ffffff;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border: 2px solid #f4d160; /* Gold */
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #f4d160; /* Gold */
-            color: #0d1b2a; /* Dark Blue for text */
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #e1c15c; /* Darker Gold */
-            transform: translateY(-2px); /* Slight lift effect */
-        }
-		
-		
-		
-/* Footer */
-        footer {
-            background-color: #0d1b2a;
-            padding: 2rem;
-            text-align: center;
-            color: #f4d160;
-	    font-size: 14px;
-        }
-
-        footer p {
-            margin-bottom: 0;
-        }
-		
-
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column; /* Stack columns on smaller screens */
-				
-				padding: 1.5rem;
-				width: 130%; /* Adjusted width, takes up 90% of the available space */
-				max-width: 500px; /* Increased max-width of the cards */
-            }
-            .contact-info,
-            .form-container {
-                padding: 0; /* Remove padding for smaller screens */
-                margin-bottom: 20px; /* Space between stacked items */
-            }
-            h2 {
-                font-size: 24px; /* Adjust heading size */
-            }
-			.social-media {
-            margin-top: 60px;
-			}
-			.form-container h2{
-			visibility: hidden;
-			}
-			.container {
-			padding: 20px;
-			}
-        }
+	
+	
+	
+	
+        body { margin: 0; }
+        iframe { width: 100%; height: 100vh; border: none }
     </style>
 </head>
 <body>
 
-
-    <!-- Navigation Section -->
+<!-- Navigation Section -->
     <header>
         <div class="logo">
-            <h1> <a href="index.html" style="text-decoration: none; color: #ffd400;"><span style="font-family:Blippo, fantasy;">𝔄ℌ𝔄𝔇'𝔰.</span><span style="font-size: 8px;"> &nbspTERRITORY.</span> </a></h1>
+            <h1> <a href="index.html" style="text-decoration: none; color: #ffd400;"><span style="font-family:Blippo, fantasy;">𝔄ℌ𝔄𝔇'𝔰</span><span style="font-size: 8px;"> &nbspTERRITORY.</span> </a></h1>
         </div>
         <nav>
             <ul>
@@ -442,53 +272,9 @@
         }
     </script>
 
-	
-<!-- Contact -->
+<br><br>
 
-	<div class="container">
-		<div class="bg-image"></div>
-		<div class="content">
-			<div class="contact-info">
-				<h2>Contact Information</h2>
-				<p><strong>Phone:</strong><span style="color:#ffffff;"> +8801540111693 </span></p>
-				<p><strong>Email:</strong><span style="color:#ffffff;"> ahad000555ex@gmail.com</span></p>
-				<p><strong>Address:</strong><span style="color:#ffffff;"> Dhanmoni, Dhaka, BD</span></p>
-				<p><strong>Hometown:</strong><span style="color:#ffffff;"> Chandpur, Bangladesh</span></p>
-				<div class="social-media">
-					<h3>Follow Me</h3>
-					<a href="https://www.facebook.com/abd.ahad.001" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-					<a href="https://wa.me/+8801540111693" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-					
-					<a href="https://www.threads.net/@cal.ahad" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-					<a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-				</div>
-			</div>
-			<div class="form-container">
-				<h2>Get in Touch</h2>
-				<form action="https://api.staticforms.xyz/submit" method="post">
-					<input type="hidden" name="accessKey" value="f3be2639-243f-403f-b8b8-ca2f24bd6e96"> <!-- Required -->
-					<div class="form-group">
-					<input type="text" name="name" placeholder="Your Name" required>
-					</div>
-					<div class="form-group">
-					<input type="email" name="email" placeholder="Your Email" required>
-					</div>
-					<div class="form-group">
-					<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-					</div>
-					<!-- If you want form to redirect to a specific url after submission -->
-					<input type="hidden" name="redirectTo" value="https://testopt.vercel.app/thankyou.html"> <!-- Optional -->
-					<button type="submit" class="submit-btn">Send Message</button>
-				</form>
-
-			</div>
-		</div>
-	</div>
-
-<!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
-    </footer>
+<iframe src="https://app.cmngsn.com/page/f9779560-be28-11ef-8871-85f56a478bbf"></iframe>
 
 </body>
 </html>
