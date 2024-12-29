@@ -24,7 +24,6 @@
             min-height: 100vh;
             padding: 2rem 1rem;
             text-align: center;
-            position: relative;
         }
 
         html {
@@ -226,50 +225,57 @@
             background: #4caf50;
         }
 
-        /* Chat Bubble */
-        .chat-bubble-container {
+        /* Floating Chat Button Section */
+        .chat-btn-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            z-index: 999;
+            z-index: 100;
         }
 
-        .chat-bubble {
-            background: #4caf50;
+        .chat-btn {
+            background-color: #4caf50;
             color: white;
-            padding: 15px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 60px;
-            height: 60px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-            font-size: 1.5rem;
+            padding: 15px;
+            font-size: 24px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
-        .chat-bubble:hover {
+        .chat-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         .chat-arrow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 5px;
-            color: #fff;
-            font-size: 0.9rem;
+            position: absolute;
+            right: -15px;
+            top: 10px;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid #4caf50;
+            transition: opacity 0.3s ease;
+            opacity: 0;
         }
 
-        .chat-arrow span {
-            margin-left: 8px;
-            font-size: 0.9rem;
+        .chat-btn-container:hover .chat-arrow {
+            opacity: 1;
+        }
+
+        .chat-text {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #fff;
+            font-weight: bold;
+            display: none;
+        }
+
+        .chat-btn-container:hover .chat-text {
+            display: inline-block;
         }
 
         /* Responsive Design */
@@ -297,9 +303,8 @@
             .social-section {
                 gap: 1rem;
             }
-
             .social-header {
-                font-size: 1rem;
+            font-size: 1rem;
             }
 
             .social-button {
@@ -316,8 +321,9 @@
                 padding: 0.8rem 1rem;
             }
 
-            .chat-arrow span {
-                display: none;
+            .chat-btn-container {
+                bottom: 10px;
+                right: 10px;
             }
         }
     </style>
@@ -387,14 +393,13 @@
         </div>
     </div>
 
-    <!-- Chat Bubble -->
-    <div class="chat-bubble-container">
-        <div class="chat-bubble">
-            <i class="fas fa-comment-alt"></i>
+    <!-- Floating Chat Button -->
+    <div class="chat-btn-container">
+        <div class="chat-btn">
+            <i class="fas fa-comments"></i>
         </div>
-        <div class="chat-arrow">
-            <span>Chat here</span>
-        </div>
+        <div class="chat-text">Chat here</div>
+        <div class="chat-arrow"></div>
     </div>
 </body>
 </html>
