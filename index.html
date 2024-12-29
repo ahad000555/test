@@ -1,280 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-	
-	/* Global Styles */
+        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Arial', sans-serif;
         }
 
         body {
-            background-color: #0d1b2a;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
-        }
-
-        /* Navigation Styles */
-        header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.2rem 3rem; /* Slightly increased padding for spacing */
-            background-color: rgba(13, 27, 42, 0.95);
-            z-index: 1000;
-            transition: background-color 0.3s ease-in-out;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow for a floating effect */
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            text-align: center;
         }
 
-        .logo {
-            font-size: 13px;
-            color: #ffd400;
+        html {
+            overflow-y: auto;
+        }
+
+        /* Profile Image */
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Profile Header */
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #b1b1b1;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin: 1rem auto 4rem auto;
+        }
+
+        /* Section Container */
+        .section-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            margin-top: -2rem;
+        }
+
+        /* Contact Details Section */
+        .contact-details {
+            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
+        }
+
+        .contact-header {
+            font-size: 1.6rem;
             font-weight: bold;
+            margin-bottom: 1.2rem;
+            color: #e94560;
+            visibility: hidden;
         }
 
-        nav {
+        .contact-info {
             display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
             align-items: center;
         }
 
-        nav ul {
-            list-style-type: none;
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             display: flex;
-            margin-right: 40px;
-        }
-
-        nav ul li {
-            margin-right: 40px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 540;
-            position: relative;
-            transition: color 0.3s, background-color 0.3s; /* Transition for background color */
-            padding: 10px 15px; /* Increased padding */
-            font-size: 14px;
-            border-radius: 5px; /* Rounded corners */
-        }
-
-        /* Styles for dropdown menu when shown */
-        nav ul.show {
-            display: flex; /* Show flex when the menu is active */
-            flex-direction: column; /* Stack items vertically */
-            position: absolute;
-            top: 60px; /* Position the dropdown */
-            left: 0; /* Align to the left */
-            width: 100%; /* Full width */
-            background-color: rgba(13, 27, 42, 0.95); /* Semi-transparent background */
-            padding: 1rem; /* Padding for the dropdown */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-        }
-
-        /* Hover Effects for Menu Items */
-        nav ul li a:hover {
-            color: #feda6a; /* Change text color on hover */
-            background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-        }
-
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
+            align-items: center;
+            gap: 0.8rem;
             width: 100%;
-            height: 2px;
-            background-color: #fff;
-            transform: scaleX(0);
-            transform-origin: bottom left;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #4caf50;
+        }
+
+        .contact-item span {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        /* Action Buttons Section */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-resume {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+        }
+
+        .button-resume:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-website {
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
+        }
+
+        .button-website:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Social Media Section */
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Stylish Social Header */
+        .social-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #e94560, #f39c12);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 10px;
             transition: transform 0.3s ease;
         }
 
-        nav ul li a:hover::before {
-            transform: scaleX(1);
-            transform-origin: bottom right;
+        .social-header:hover {
+            transform: translateY(-5px);
         }
 
-        /* Glass Button Styles */
-        .glass-button {
-            display: inline-block;
-            padding: 11px 27px;
-            font-size: 14px;
-            border-radius: 30px;
-            color: #ffd400;
-            text-decoration: none;
-            background: transparent;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-            border: 1px solid #ffd400;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            margin-left: 20px; /* Adds a gap between button and the menu */
-        }
-
-        .glass-button:hover {
-            background-color: #ffd400;
-            color: #0d1b2a;
-            transform: translateY(0px);
-        }
-
-        .glass-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: skewX(-15deg);
-            transition: all 0.5s ease;
-        }
-
-        .glass-button:hover::before {
-            left: 100%;
-        }
-
-        /* Mobile Styles */
-        .menu-icon {
-            display: none;
-            font-size: 30px;
+        .social-button {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
             color: #fff;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: #e4405f;
+        }
+
+        .twitter {
+            background: #1da1f2;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .mail {
+            background: #f39c12;
+        }
+
+        .contact {
+            background: #4caf50;
+        }
+
+        /* Floating Chat Bubble */
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        @media (max-width: 768px) {
-            header {
-                padding: 1rem 2rem; /* Adjust padding for mobile */
+        .chat-bubble:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .chat-bubble i {
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
             }
 
-            nav ul {
-                display: none;
-                flex-direction: column; /* Stack vertically on mobile */
-                width: 100%; /* Full width */
-                left: 0; /* Align to the left */
-                background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-                backdrop-filter: blur(10px); /* Blur effect for premium feel */
-                border-radius: 10px; /* Rounded corners */
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-                padding: 1rem; /* Padding for the dropdown */
-                transition: all 0.3s ease; /* Smooth transition */
+            p {
+                font-size: 0.8rem;
+                line-height: 1.5;
+                padding: 0 1rem;
             }
 
-            nav ul.show {
-                display: flex; /* Show the menu when toggled */
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
             }
 
-            nav ul li {
-                margin: 5px 0px;
-                padding-bottom: 5px;
-                text-align: left; /* Align text to the left */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Divider between items */
-                padding-left: 20px; /* Add padding for left alignment */
+            .button {
+                font-size: 1rem;
+                width: 100%;
             }
 
-            nav ul li:last-child {
-                border-bottom: none; /* Remove border from the last item */
+            .social-section {
+                gap: 1rem;
+            }
+            .social-header {
+            font-size: 1rem;
             }
 
-            nav ul li a {
-                font-size: 14px; /* Larger font for readability */
-                padding: 10px 15px; /* Padding for touch devices */
-                color: #ffff; /* Primary color for text */
-                /* Removed hover transition effects for mobile */
+            .social-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
             }
 
-            nav ul li a:hover {
-                /* Removed hover effects for mobile */
-				background: transparent; /* No background change */
-				color: #ffd400; /* No color change */
-				
-            }
-			
-			
-			
-			nav ul li a::before {
-				content: '';
-				position: absolute;
-				bottom: 0px;
-				left: 0;
-				width: 0%;
-				height: 0px;
-				background-color: transparent;
-				transform: scaleX(0);
-				transform-origin: bottom left;
-				transition: transform 0.3s ease;
-			}
-
-			nav ul li a:hover::before {
-				transform: scaleX(0);
-				transform-origin: bottom right;
-			}
-
-            .menu-icon {
-                display: block;
-                margin-top: -4%;
-                margin-right: -10px;
+            .contact-header {
+                visibility: hidden;
             }
 
-            /* Adjust Contact Button for Mobile */
-            .glass-button {
-                display: inline-block;
-                font-size: 12px; /* Larger font for readability */
-                padding: 10px 20px; /* Adjusted padding */
-                margin-right: 20px;
+            .contact-item {
+                padding: 0.8rem 1rem;
+            }
+
+            /* Adjust Chat Bubble for Small Screens */
+            .chat-bubble {
+                right: 10px;
+                bottom: 10px;
+                padding: 12px;
+                font-size: 1.3rem;
             }
         }
-	
-	
-	
-	
-        body { margin: 0; }
-        iframe { width: 100%; height: 100vh; border: none }
     </style>
 </head>
 <body>
-
-<!-- Navigation Section -->
-    <header>
-        <div class="logo">
-            <h1> <a href="index.html" style="text-decoration: none; color: #ffd400;"><span style="font-family:Blippo, fantasy;">𝔄ℌ𝔄𝔇'𝔰</span><span style="font-size: 8px;"> &nbspTERRITORY.</span> </a></h1>
+    <div class="section-container">
+        <!-- Profile Section -->
+        <div class="section-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>ABDUL AHAD</h1>
+            <p>Hi, I'm Ahad. Currently pursuing a BSc(Engg.) in CSE at NITER, University of Dhaka. <br>Alongside studies, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Work</a></li>
-                <li><a href="life-events.html">Life Events</a></li>
-                <li><a href="explores.html">Explores</a></li>
-            </ul>
+
+        <!-- Action Buttons Section -->
+        <div class="action-buttons">
+            <a href="Resume.html" target="_blank" class="button button-resume">My Resume</a>
+            <a href="ahad-in.html" target="_blank" class="button button-website">Website</a>
+        </div>
+
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <div class="contact-header">Contact Details</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+8801720386495</span>
+                </div>
+				<div class="contact-item">
+					<i class="fab fa-whatsapp"></i>
+					<span>+8801540111693 (WhatsApp)</span>
+				</div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ahad000555ex@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1209 Dhanmondi, Dhaka, Bangladesh.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Buttons Section -->
+        <div class="social-header">Get in touch</div>
+        <div class="social-section">
+            <a href="https://www.facebook.com/abd.ahad.001" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="ahad-in.html" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
             
-            <a href="contact.html" class="glass-button">Contact</a>
-            <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-        </nav>
-    </header>
+            <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+8801540111693" target="_blank" class="social-button contact">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
 
-    <script>
-        function toggleMenu() {
-            const navUl = document.querySelector('nav ul');
-            navUl.classList.toggle('show');
-        }
-    </script>
-
-<br><br>
-
-<iframe src="https://app.cmngsn.com/page/f9779560-be28-11ef-8871-85f56a478bbf"></iframe>
-
+    <!-- Chat Bubble Icon -->
+    <div class="chat-bubble">
+        <i class="fas fa-comment-alt"></i>
+    </div>
 </body>
 </html>
