@@ -24,6 +24,7 @@
             min-height: 100vh;
             padding: 2rem 1rem;
             text-align: center;
+            position: relative;
         }
 
         html {
@@ -225,55 +226,50 @@
             background: #4caf50;
         }
 
-        /* Floating Chat Bubble */
-        .chat-bubble {
+        /* Chat Bubble */
+        .chat-bubble-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .chat-bubble {
             background: #4caf50;
             color: white;
             padding: 15px;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            font-size: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
             cursor: pointer;
-            z-index: 100;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .chat-bubble:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
         .chat-arrow {
-            position: absolute;
-            bottom: 35px;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #4caf50;
-            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5px;
+            color: #fff;
+            font-size: 0.9rem;
         }
 
-        .chat-text {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            background: #4caf50;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 14px;
-            display: none;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        .chat-bubble:hover .chat-text {
-            display: block;
-            opacity: 1;
+        .chat-arrow span {
+            margin-left: 8px;
+            font-size: 0.9rem;
         }
 
         /* Responsive Design */
@@ -318,6 +314,10 @@
 
             .contact-item {
                 padding: 0.8rem 1rem;
+            }
+
+            .chat-arrow span {
+                display: none;
             }
         }
     </style>
@@ -387,11 +387,14 @@
         </div>
     </div>
 
-    <!-- Floating Chat Bubble -->
-    <div class="chat-bubble">
-        <i class="fas fa-comment"></i>
-        <div class="chat-arrow"></div>
-        <div class="chat-text">Chat here</div>
+    <!-- Chat Bubble -->
+    <div class="chat-bubble-container">
+        <div class="chat-bubble">
+            <i class="fas fa-comment-alt"></i>
+        </div>
+        <div class="chat-arrow">
+            <span>Chat here</span>
+        </div>
     </div>
 </body>
 </html>
