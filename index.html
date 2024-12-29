@@ -465,18 +465,19 @@
 			</div>
 			<div class="form-container">
 				<h2>Get in Touch</h2>
-				<form action="send_email.php" method="POST">
+				<form id="contact-form">
 					<div class="form-group">
-					<input type="text" name="name" placeholder="Your Name" required>
+						<input type="text" name="name" placeholder="Your Name" required aria-label="Your Name">
 					</div>
 					<div class="form-group">
-					<input type="email" name="email" placeholder="Your Email" required>
+						<input type="email" name="email" placeholder="Your Email" required aria-label="Your Email">
 					</div>
 					<div class="form-group">
-					<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+						<textarea name="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
 					</div>
-					<button type="submit" class="submit-btn">Send Message.</button>
+					<button type="submit" class="submit-btn">Send Message</button>
 				</form>
+
 
 			</div>
 		</div>
@@ -486,6 +487,34 @@
     <footer>
         <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
     </footer>
+	
+		<script>
+		// Initialize EmailJS
+emailjs.init("FYPLlSj9sj-5pVIB-"); // Replace with your EmailJS User ID
+
+// Handle Form Submission
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const formData = {
+        name: this.name.value, // Get the value of the "name" input
+        email: this.email.value, // Get the value of the "email" input
+        message: this.message.value, // Get the value of the "message" textarea
+    };
+
+    // Send email via EmailJS
+    emailjs.send("service_489umxq", "template_wt3rb5s", formData)
+        .then(function (response) {
+            alert("Message sent successfully!");
+            console.log("SUCCESS!", response.status, response.text);
+        })
+        .catch(function (error) {
+            alert("Failed to send message. Please try again.");
+            console.error("FAILED...", error);
+        });
+});
+
+		</script>
 
 </body>
 </html>
