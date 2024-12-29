@@ -225,50 +225,54 @@
             background: #4caf50;
         }
 
-        /* Chat Bubble Icon */
-        .chat-icon-container {
+        /* Chat Bubble */
+        .chat-bubble {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 999;
-        }
-
-        .chat-icon {
             background-color: #25d366;
-            width: 60px;
-            height: 60px;
+            color: #fff;
             border-radius: 50%;
-            color: white;
-            font-size: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
-        .chat-icon:hover {
+        .chat-bubble:hover {
             transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Chat Bubble Tooltip */
-        .chat-tooltip {
-            display: none;
+        .chat-message {
             position: absolute;
-            bottom: 70px;
-            right: 0;
-            background-color: #4caf50;
-            padding: 10px;
-            color: white;
-            border-radius: 6px;
+            bottom: 60px;
+            right: 80px;
+            background-color: #25d366;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
             font-size: 14px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: none;
             white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .chat-icon-container:hover .chat-tooltip {
+        .chat-bubble:hover + .chat-message {
             display: block;
+        }
+
+        .chat-message:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #25d366;
         }
 
         /* Responsive Design */
@@ -315,10 +319,9 @@
                 padding: 0.8rem 1rem;
             }
 
-            .chat-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 24px;
+            .chat-message {
+                right: 50px;
+                bottom: 70px;
             }
         }
     </style>
@@ -346,10 +349,10 @@
                     <i class="fas fa-phone-alt"></i>
                     <span>+8801720386495</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+8801540111693 (WhatsApp)</span>
-                </div>
+				<div class="contact-item">
+					<i class="fab fa-whatsapp"></i>
+					<span>+8801540111693 (WhatsApp)</span>
+				</div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>ahad000555ex@gmail.com</span>
@@ -370,7 +373,7 @@
             <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
@@ -379,6 +382,7 @@
             <a href="ahad-in.html" target="_blank" class="social-button linkedin">
                 <i class="fab fa-linkedin-in"></i>
             </a>
+            
             <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -388,12 +392,12 @@
         </div>
     </div>
 
-    <!-- Chat Bubble Icon -->
-    <div class="chat-icon-container">
-        <div class="chat-icon">
-            <i class="fas fa-comment-alt"></i>
-        </div>
-        <div class="chat-tooltip">Chat here</div>
+    <!-- Chat Bubble -->
+    <div class="chat-bubble">
+        <i class="fas fa-comment"></i>
+    </div>
+    <div class="chat-message">
+        Chat here
     </div>
 </body>
 </html>
