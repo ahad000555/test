@@ -14,7 +14,444 @@
             font-family: 'Arial', sans-serif;
         }
 
+        body {<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
         body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        html {
+            overflow-y: auto;
+        }
+
+        /* Profile Image */
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Profile Header */
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #b1b1b1;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            margin: 1rem auto 4rem auto;
+        }
+
+        /* Section Container */
+        .section-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            margin-top: -2rem;
+        }
+
+        /* Contact Details Section */
+        .contact-details {
+            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
+        }
+
+        .contact-header {
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 1.2rem;
+            color: #e94560;
+            visibility: hidden;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: #4caf50;
+        }
+
+        .contact-item span {
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        /* Action Buttons Section */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-resume {
+            background: linear-gradient(45deg, #4caf50, #81c784);
+        }
+
+        .button-resume:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-website {
+            background: linear-gradient(45deg, #2196f3, #64b5f6);
+        }
+
+        .button-website:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Social Media Section */
+        .social-section {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* Stylish Social Header */
+        .social-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: linear-gradient(135deg, #e94560, #f39c12);
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-header:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-button {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20%;
+            color: #fff;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: #e4405f;
+        }
+
+        .twitter {
+            background: #1da1f2;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .mail {
+            background: #f39c12;
+        }
+
+        .contact {
+            background: #4caf50;
+        }
+
+        /* Chat Icon Section */
+        .chat-icon {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0078d4;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-icon:hover {
+            transform: scale(1.1);
+        }
+		
+		
+		
+		
+		/* Footer Styles */
+        footer {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+            width: 100%;
+            text-align: center;
+            border-top: 3px solid #e94560;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        footer .social-footer .social-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            box-shadow: none;
+        }
+
+        footer .social-footer .social-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            color: #fff;
+		
+        }
+
+        /* Responsive Design for Footer */
+        @media (max-width: 600px) {
+            footer {
+                padding: 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.75rem;
+            }
+
+            footer .social-footer {
+                gap: 1rem;
+            }
+        }
+		
+		
+        
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+                line-height: 1.5;
+                padding: 0 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .button {
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .social-section {
+                gap: 1rem;
+            }
+            .social-header {
+            font-size: 1rem;
+            }
+
+            .social-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .contact-header {
+                visibility: hidden;
+            }
+
+            .contact-item {
+                padding: 0.8rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section-container">
+        <!-- Profile Section -->
+        <div class="section-header">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>ABDUL AHAD</h1>
+            <p>Hi, I'm Ahad. Currently pursuing a BSc(Engg.) in CSE at NITER, University of Dhaka. <br>Alongside studies, I am committed to the teaching profession, serving as an instructor to share my knowledge and passion for learning.</p>
+        </div>
+
+        <!-- Action Buttons Section -->
+        <div class="action-buttons">
+            <a href="Resume.html" target="_blank" class="button button-resume">My Resume</a>
+            <a href="ahad-in.html" target="_blank" class="button button-website">Website</a>
+        </div>
+
+        <!-- Contact Details Section -->
+        <div class="contact-details">
+            <div class="contact-header">Contact Details</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+8801720386495</span>
+                </div>
+				<div class="contact-item">
+					<i class="fab fa-whatsapp"></i>
+					<span>+8801540111693 (WhatsApp)</span>
+				</div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ahad000555ex@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1209 Dhanmondi, Dhaka, Bangladesh.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media Buttons Section -->
+        <div class="social-header">Get in touch</div>
+        <div class="social-section">
+            
+			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            
+            
+            <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+8801540111693" target="_blank" class="social-button contact">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Chat Icon -->
+    <div class="chat-icon" onclick="alert('Chat Feature Coming Soon!')">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+	
+	<!-- Footer Section -->
+    <footer>
+        <div class="social-footer">
+            <a href="https://www.facebook.com/abd.ahad.001" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="ahad-in.html" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>
+
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
             display: flex;
