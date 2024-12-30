@@ -24,7 +24,6 @@
             min-height: 100vh;
             padding: 2rem 1rem;
             text-align: center;
-            flex-direction: column;
         }
 
         html {
@@ -71,7 +70,7 @@
 
         /* Contact Details Section */
         .contact-details {
-            margin: 2.5rem 0 2.5rem;
+            margin: 2.5rem 0 2.5rem; /* Adjusted top margin */
         }
 
         .contact-header {
@@ -226,58 +225,29 @@
             background: #4caf50;
         }
 
-        /* Floating Chat Bubble */
-        .chat-bubble {
+        /* Chat Icon Section */
+        .chat-icon {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #4caf50;
-            color: white;
-            padding: 15px;
+            bottom: 30px;
+            right: 30px;
+            background: #0078d4;
             border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            font-size: 24px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            color: white;
+            font-size: 1.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             cursor: pointer;
-            z-index: 100;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
 
-        .chat-bubble:hover {
+        .chat-icon:hover {
             transform: scale(1.1);
         }
-
-        .chat-arrow {
-            position: absolute;
-            bottom: 35px;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #4caf50;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .chat-text {
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            background: #4caf50;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 14px;
-            display: none;
-            transition: opacity 0.3s ease;
-            opacity: 0;
-        }
-
-        .chat-bubble:hover .chat-text {
-            display: block;
-            opacity: 1;
-        }
-
-        /* Footer Styles */
+		
+		        /* Footer Styles */
         footer {
             background: #1a1a2e;
             color: #fff;
@@ -328,6 +298,53 @@
                 gap: 1rem;
             }
         }
+		
+		
+        
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+                line-height: 1.5;
+                padding: 0 1rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .button {
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .social-section {
+                gap: 1rem;
+            }
+            .social-header {
+            font-size: 1rem;
+            }
+
+            .social-button {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+
+            .contact-header {
+                visibility: hidden;
+            }
+
+            .contact-item {
+                padding: 0.8rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -353,10 +370,10 @@
                     <i class="fas fa-phone-alt"></i>
                     <span>+8801720386495</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+8801540111693 (WhatsApp)</span>
-                </div>
+				<div class="contact-item">
+					<i class="fab fa-whatsapp"></i>
+					<span>+8801540111693 (WhatsApp)</span>
+				</div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <span>ahad000555ex@gmail.com</span>
@@ -377,7 +394,7 @@
             <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+			<a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
                 <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
@@ -386,6 +403,7 @@
             <a href="ahad-in.html" target="_blank" class="social-button linkedin">
                 <i class="fab fa-linkedin-in"></i>
             </a>
+            
             <a href="mailto:ahad000555ex@gmail.com" target="_blank" class="social-button mail">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -395,14 +413,12 @@
         </div>
     </div>
 
-    <!-- Floating Chat Bubble -->
-    <div class="chat-bubble">
-        <i class="fas fa-comment"></i>
-        <div class="chat-arrow"></div>
-        <div class="chat-text">Chat here</div>
+    <!-- Chat Icon -->
+    <div class="chat-icon" onclick="alert('Chat Feature Coming Soon!')">
+        <i class="fas fa-comment-dots"></i>
     </div>
-
-    <!-- Footer Section -->
+	
+	<!-- Footer Section -->
     <footer>
         <div class="social-footer">
             <a href="https://www.facebook.com/abd.ahad.001" target="_blank" class="social-button facebook">
@@ -423,10 +439,6 @@
         </div>
         <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
     </footer>
+    
 </body>
 </html>
-
-
-
-
-
