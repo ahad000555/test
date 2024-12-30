@@ -24,6 +24,7 @@
             min-height: 100vh;
             padding: 2rem 1rem;
             text-align: center;
+            flex-direction: column;
         }
 
         html {
@@ -278,59 +279,53 @@
 
         /* Footer Styles */
         footer {
-            width: 100%;
-            background: linear-gradient(135deg, #16213e, #1a1a2e);
+            background: #1a1a2e;
             color: #fff;
-            padding: 2rem 0;
+            padding: 2rem;
+            width: 100%;
             text-align: center;
-            margin-top: 3rem;
-            box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.2);
+            border-top: 3px solid #e94560;
+            margin-top: 2rem;
+            font-size: 0.9rem;
         }
 
-        footer h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            font-size: 1rem;
-            color: #b1b1b1;
-            margin-bottom: 1rem;
-        }
-
-        .footer-social {
+        footer .social-footer {
             display: flex;
             justify-content: center;
             gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-social a {
+        footer .social-footer .social-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1rem;
+            box-shadow: none;
+        }
+
+        footer .social-footer .social-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            font-size: 0.8rem;
             color: #fff;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .footer-social a:hover {
-            transform: scale(1.1);
-            color: #4caf50;
+		
         }
 
         /* Responsive Design for Footer */
         @media (max-width: 600px) {
             footer {
-                padding: 1.5rem 0;
-            }
-
-            footer h2 {
-                font-size: 1.2rem;
+                padding: 1.5rem;
             }
 
             footer p {
-                font-size: 0.9rem;
+                font-size: 0.75rem;
             }
 
-            .footer-social a {
-                font-size: 1.3rem;
+            footer .social-footer {
+                gap: 1rem;
             }
         }
     </style>
@@ -400,24 +395,38 @@
         </div>
     </div>
 
-    <!-- Footer Section -->
-    <footer>
-        <h2>Contact Information</h2>
-        <p>© 2024 Abdul Ahad. All rights reserved.</p>
-        <div class="footer-social">
-            <a href="https://www.facebook.com/abd.ahad.001" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/cal.ahad/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me/+8801540111693" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://x.com/calistoahad" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="ahad-in.html" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </footer>
-
     <!-- Floating Chat Bubble -->
     <div class="chat-bubble">
         <i class="fas fa-comment"></i>
         <div class="chat-arrow"></div>
         <div class="chat-text">Chat here</div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="social-footer">
+            <a href="https://www.facebook.com/abd.ahad.001" target="_blank" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/cal.ahad/" target="_blank" class="social-button instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/+8801540111693" target="_blank" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://x.com/calistoahad" target="_blank" class="social-button twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="ahad-in.html" target="_blank" class="social-button linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Abdul Ahad. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+
+
+
+
+
